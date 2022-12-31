@@ -1,0 +1,105 @@
+Framework de Persistência - Mapeamento de Objetos
+-------------------------------------------------
+
+	Desenvolvido por APOENA Software Livre
+	http://www.apoenasoftwarelivre.com.br
+
+	Autor: Guilherme Silva de Lacerda (guilherme@apoenasoftwarelivre.com.br)
+	Data de criação: 11/04/2002
+	Data de alteração: 17/05/2002
+
+
+APRESENTAÇÃO
+------------
+
+	O Framework de Persistência desenvolvido pela APOENA Software Livre compreende
+de uma hierarquia de classes organizadas lógicamente, que permite o mapeamento
+dos objetos em qualquer formato (SGBD, XML, Arquivo), utilizando o conceito
+de "brokers".
+
+	Os "brokers" são os formatos suportados pelo framework para persistir objetos.
+Desde modo, um "broker" pode ser considerado um SGBD, por exemplo.
+
+
+CARACTERÍSTICAS FUNCIONAIS
+--------------------------
+
+- Utilização de padrões de projeto (Abstract Factory, Proxy, Bridge e Singleton);
+- Permite que a aplicação cliente do framework use vários "brokers" 
+  simultaneamente, tornando a aplicação heterogênea;
+- As classes "Proxy" é que materializam/desmaterializam os objetos, 
+  disponibilizando a interface para acesso ao "broker";
+
+
+PARTICULARIDADES
+----------------
+
+	método "criaBroker()" utiliza a classe "Broker", retornando o objeto criado.
+
+function &criaBroker() {
+
+	$broker = new Broker( $this->getBroker() );
+	return $broker->getInstancia();
+	
+}
+
+	Este método é implementado no "Proxy" e herdado para as subclasses.
+	O "Proxy" deve ter um método "getBroker()", com apenas a assinatura.
+	Nas subclasses "Proxy" o método "getBroker()" é implementado 
+indicando qual "Broker" será usado para persistência.
+
+function getBroker() {
+
+	return BD_ORACLE;
+
+}
+
+	As constantes são definidas em um arquivo "header", por exemplo:
+define( BD_ORACLE, 0 );
+define( BD_PGSQL, 1 ); // e assim por diante
+
+	O método "getInstancia()" do "broker" tem a seguinte estrutura:
+	
+function &getInstancia() {
+
+	switch( $broker ) {
+	
+		case BD_ORACLE: {
+			$objetoPersistente = new BrokerOracle();
+			break;
+		}
+		
+		...
+	}
+	
+	return $objetoPersistente;
+
+}
+
+
+	Os atributos "host, usuario, senha e bd" são definidos no "broker"
+e redefinidos nos "brokers" específicos, permitindo que se possa ter SGBDs
+(brokers) em máquinas diferentes, geograficamente distribuídas.
+
+	A classe AbstractBroker contém as principais definições que são 
+utilizadas na subclasses Broker, BrokerSGBD e BrokerArquivo. Tem a finalidade
+do usuário do framework selecionar onde será definido as informações de
+conexão, definição de usuários, entre outras.
+
+	Isto facilita o desenvolvimento, permitindo que as definições de 
+conexão possam ser feitas em qualquer classe componente dos "brokers" 
+(Broker, BrokerSGBD, BrokerPgSQL, etc.).
+
+
+USO DO FRAMEWORK
+----------------
+
+	Para usar o framework, é necessário estender a classe "Proxy" e
+reescrever o metodo getBroker() (responsável pela definição do broker que
+será utilizado para materialização dos objetos).
+
+	A classe, para maior entendimento, deve ser definida como 
+"NomedaClasse" mais o sufixo Proxy.
+	Ex.: ClienteProxy, AgendaProfissionalProxy
+
+	Não se pode esquecer de setar o PATH ($pathClassesPersistencia)

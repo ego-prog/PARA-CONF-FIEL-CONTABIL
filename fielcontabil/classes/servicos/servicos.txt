@@ -1,0 +1,95 @@
+Framework de Serviços
+---------------------
+
+	Desenvolvido por APOENA Software Livre
+	http://www.apoenasoftwarelivre.com.br
+
+	Autor: Guilherme Silva de Lacerda (guilherme@apoenasoftwarelivre.com.br)
+	Data de criação: 11/04/2002
+	Data de alteração: 19/05/2002
+
+
+APRESENTAÇÃO
+------------
+
+	O Framework de Serviços desenvolvido pela APOENA Software Livre compreende
+de uma hierarquia de classes organizadas lógicamente, que permite a utilização
+das funções de serviços diversos nas aplicações.
+
+
+COMPONENTES
+-----------
+
+- Usuario   - esqueleto de classe para controle de usuário.
+- Msg       - Exibe mensagens dentro das aplicações.
+- Parametro - Contém as principais definições para parâmetros das aplicações.
+- Log	    - Controle de LOG da aplicação.
+- Consulta  - Esqueleto para uso do editor de consultas.
+- Cabecalho - Classe com funcionalidades de titulo, data e hora.
+
+FUNCIONALIDADES
+---------------
+
+	1. USUARIO
+	
+	O Framework de usuário deve ser utilizado para controle de acesso das
+aplicações desenvolvidas, com controle de sessões.
+
+	Para seu uso, é necessário criar uma subclasse de Usuario para implementar
+as funcionalidades específicas da aplicação.
+
+	2. MSG
+	
+	O Framework de mensagens é responsável pela exibição das mensagens da aplicação,
+incluindo imagem da aplicação, estilo de botão e ação a ser executada.
+
+	Para seu uso, é necessário criar uma subclasse de Msg para implementar
+as funcionalidades básicas de acesso, configurada através do método setConf().
+
+	3. PARAMETRO
+	
+	O Framework de parâmetros deve ser utilizado para definição dos parâmetros da
+aplicação.
+
+	Para seu uso, é necessário criar uma subclasse de Parametro para implementar
+as funcionalidades específicas da aplicação.
+
+	4. LOG
+	
+	O Framework de LOG deve ser utilizado para registrar operações de LOG.
+
+	Para seu uso, é necessário criar uma subclasse de Log para implementar
+as funcionalidades específicas da aplicação.
+
+	5. CONSULTA
+	
+	O Framework de Consulta deve ser utilizado para criar consultas no editor.
+
+	Para seu uso, é necessário criar uma subclasse de Consulta para implementar
+as funcionalidades específicas da aplicação.
+	
+	Em linhas gerais, é necessário implementar os seguintes métodos:
+	- insereConsulta(): Insere consulta no BD (depende do Broker de Persistência)
+	- buscaConsulta(): Busca consultas segundo algum critério de busca
+	- executaConsulta(): Executa consulta baseada em seu titulo
+	- mostraConsulta(): Mostra consulta a ser processada (instrucaoSql)
+
+	6. CABECALHO
+	
+	O Framework de cabecalhos de paginas Web é responsável pela exibição das mensagens da aplicação,
+incluindo informações específicas, data e hora.
+
+	Para seu uso, é necessário criar uma subclasse de Cabecalho para implementar
+as funcionalidades básicas de acesso, configurada através do método setConf().
+
+
+USO DO FRAMEWORK
+----------------
+
+	Para usar o framework, é necessário incluir o arquivo "framework_servicos.inc"
+e utilizar o esqueleto de classes pré-definidas.
+
+	Geralmente, se utiliza com a seguinte definição:
+	ConsultaSigesp, UsuarioSac, MsgBean, LogSac, entre outras...
+
+	Não se pode esquecer de setar o PATH ($pathClassesServicos)

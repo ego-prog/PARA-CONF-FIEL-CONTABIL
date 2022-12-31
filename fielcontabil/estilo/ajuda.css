@@ -1,0 +1,30 @@
+.pagina {
+    BACKGROUND-COLOR: #FFFFFF;
+    FONT-FAMILY: Verdana, Arial;
+}
+
+.titjan {
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 8pt;
+    COLOR: white;
+    HEIGHT: 8pt;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #669900;
+}
+
+.corjan {
+    FONT-SIZE: 8pt;
+    COLOR: white;
+    HEIGHT: 8pt;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #669900;
+}
+
+.texto {
+    FONT-SIZE: 10pt;
+    COLOR: darkblue;
+    HEIGHT: 8pt;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #FFCC00;
+}
+

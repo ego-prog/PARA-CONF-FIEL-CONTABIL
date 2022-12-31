@@ -1,0 +1,70 @@
+FIEL Contábil
+-------------
+
+O FIEL Contábil é um software desenvolvido pela APOENA Soluções em Software Livre Ltda., através
+de seus sócios Claudimir Zavalik (claudimir@apoenasoftwarelivre.com.br)  e  Guilherme Lacerda  (
+guilherme@apoenasoftwarelivre.com.br) para o processamento de contabilidade via Internet.
+
+Para executar o FIEL Contábil, voce precisará ter instalado em seu servidor:
+- Servidor Web Apache
+- Suporte a PHP 4.3 ou superior;
+- Biblioteca libgd (para geração de gráficos);
+- Banco de Dados PostgreSQL.
+
+
+HOW-TO "mais que rápido" - só para os "ninjas"
+----------------------------------------------
+
+1. Configurar o Postgres para rodar legal
+- Certifique-se que o postgres esta no ar. ps ax nele.. Ele deve estar rodando com o parâmetro -i,
+  senão nao vai funcionar...
+
+  Exemplo de saida do ps ax em meu servidor (ps ax | grep postmaster):
+ 4895 ?        S      0:00 /usr/bin/postmaster -i -p 5432 -D /var/lib/pgsql/data
+
+- Vá no pg_hba.conf e edite o arquivo, incluindo a seguinte diretiva:
+
+  host     fielcontabil all        10.1.1.3     255.0.0.0     trust
+
+  Neste exemplo, fielcontabil é o nome do banco que escolhi e 10.1.1.3 e o ip do meu servidor.
+  Ajuste como melhor lhe convir (nao esqueça de acertar a netmask tambem).
+
+2. Configurar o ambiente do php
+- No /etc/php.ini, altere os seguintes parâmetros:
+  max_execution_time = 600       ## Temos operações demoradas, como geração de PDFs
+  register_globals = On
+
+
+3. Execute o script "install" presente no diretório do FIEL Contabil e siga os passos (Seja pa-
+   ciente cara.... leia as opções, vc não precisa tanta pressa assim).
+
+4. Finalizando
+- Bem... aí teoricamente e so restartear o servidor e bingo !!! Tem que estar tudo funcionando..
+
+    Caso você tenha dúvidas, consulte o manual que elaboramos mais detalhadamente, no diretório
+"documentacao"...
+
+
+Considerações Gerais
+--------------------
+
+1. Se você quer ajudar no desenvolvimento do FIEL Contábil:
+   Envie e-mail para suporte@apoenasoftwarelivre.com.br. Toda ajuda será bem-vinda.
+
+2. Se você quer simplesmente criticar o software:
+   Envie também um e-mail para suporte@apoenasoftwarelivre.com.br.  Já estamos acostumados com
+   críticas (alguem tem que fazer, não é mesmo ? ). Somente pedimos que seja educado (pô, usar
+   livremente e detonar é fácil, né?)
+
+3. Se você tem pena dos desenvolvedores e gostaria que continuássemos nesta aventura frenética,
+   encare isto como um negócio e contrate nosso suporte especializado ou nossos serviços de de-
+   senvolvimento de software pelo e-mail comercial@apoenasoftwarelivre.com.br
+
+
+
+Claudimir Zavalik
+Guilherme Lacerda
+APOENA Soluções em Software Livre Ltda.
+www.apoenasoftwarelivre.com.br
+Sim, nós desenvolvemos software livre.
+

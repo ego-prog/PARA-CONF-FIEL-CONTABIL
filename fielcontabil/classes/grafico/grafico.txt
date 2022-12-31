@@ -1,0 +1,38 @@
+Framework de Grafico
+--------------------
+
+	Desenvolvido por APOENA Software Livre
+	http://www.apoenasoftwarelivre.com.br
+	Autor: Claudimir Zavalik (claudimir@apoenasoftwarelivre.com.br)
+	Data de criação: 19/01/2004
+	Data de alteração: 19/01/2004
+
+
+APRESENTAÇÃO
+------------
+
+	O Framework de Grafico desenvolvido pela APOENA Software Livre compreende
+de uma hierarquia de classes organizadas lógicamente, que permite a utilização
+das funções de graficos diversos nas aplicações.
+
+
+COMPONENTES
+-----------
+
+- AbstractFormat - Superclasse com as definições dos graficos.
+- Grafico        - Cria gráficos para apresentação na Web.
+- GraficoBarra2Y - Cria grafico de barras comparativo de duas series
+
+
+USO DO FRAMEWORK
+----------------
+
+	Para usar o framework, é necessário incluir o arquivo "framework_grafico.inc"
+e utilizar o esqueleto de classes pré-definidas, estendendo suas funcionalidades para a 
+aplicação específica.
+
+	Geralmente, se utiliza com a seguinte definição:
+	GraficoSac...
+	
+	
+	Não se pode esquecer de setar o PATH ($pathClassesGraficos)

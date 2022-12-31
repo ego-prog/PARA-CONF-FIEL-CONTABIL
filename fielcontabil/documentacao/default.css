@@ -1,0 +1,13 @@
+<!-- CSS Stylesheet -->
+
+body {background-color:"ffffff";}
+.table1 {font-family:"Verdana"; border:"Gray 1px Solid"; padding:"4px"; }
+.table2 {font-family:"Verdana"; border:"White 1px Solid"; padding:"4px"; }
+.tableheader1 {font-family:"Verdana"; font-size:"10pt"; font-weight:bold; color:White; background-color:"999999"; }
+.tableheader2 {font-family:"Verdana"; font-size:"10pt"; font-weight:bold; color:Black; background-color:"ffffcc"; }
+.tabledata1 {font-family:"Verdana"; font-size:"8pt"; color:Black; background-color:"FFFFFF"; border:"Silver 0px Solid"; padding:"1px"; }
+.tabledata2 {font-family:"Verdana"; font-size:"8pt"; color:Black; background-color:"FFFFCC"; border:"Silver 0px Solid"; padding:"1px"; }
+.header1 {font-family:"Verdana"; font-size:"10pt"; font-weight:bold; color:Black; border:"Olive 0px Solid"; padding:"0px"; }
+.header2 {font-family:"Verdana"; font-size:"11pt"; font-weight:bold; color:Black; border:"Blue 1px Solid"; padding:"2px"; }
+.normaltext {font-family:"Verdana"; font-size:"10pt"; color:Black; border:"Blue 0px Solid"; padding:"0px"; }
+.label1 {font-family:"Verdana"; font-size:"10pt"; font-weight:bold;color:Black; border:"Blue 0px Solid"; padding:"0px"; }

@@ -1,0 +1,201 @@
+#!/bin/bash
+# Script para ajuste de configurações do FIEL Contábil.
+#-----------------------------------------------------------------
+# Nosso agradecimento para Hugo Cisneiros (hugo@devin.com.br)
+# pelas valorosas informacoes disponibilizadas sobre shell script
+# em http://www.devin.com.br/eitch/shell_script/
+#-----------------------------------------------------------------
+
+Principal() {
+   clear
+   echo "			     Instalação do FIEL Contábil"
+   echo "			     ---------------------------"
+   echo "     O FIEL Contábil é um software desenvolvido pela APOENA Soluções em Software Livre Ltda."
+   echo -e "(\e[0;32mhttp://www.apoenasoftwarelivre.com.br\e[0m) e distribuído nos termos da licença pública Creative"
+   echo "Commons. É reservado aos autores a possibilidade de comercialização deste software.Não pres-"
+   echo "tamos suporte técnico gratuito para este software, pois estamos tentando viver disso ;).  Os"
+   echo "desenvolvedores do sistema podem ser contatados através dos e-mails:"
+   echo -e "\t\t\t\e[0;32mclaudimir@apoenasoftwarelivre.com.br\e[0m - Claudimir Zavalik"
+   echo -e "\t\t\t\e[0;32mguilherme@apoenasoftwarelivre.com.br\e[0m - Guilherme Lacerda"
+   echo "------------------------------------------------------------------------------------------"
+   echo "Instruções:"
+   echo " "
+   echo "   Este script irá conduzí-lo durante o processo de instalação do FIEL Contábil, realizando";
+   echo "os ajustes necessários nos arquivos de configuração do sistema. Execute os passos  na ordem";
+   echo "apresentada e o FIEL Contábil estará totalmente configurado. "
+   echo " "
+   echo "------------------------------------------------------------------------------------------"
+
+   echo "			    M E N U    P R I N C I P A L"
+   echo " "
+   echo -e "\t\t\t1. Ajustar o path do Sistema\n"
+   echo -e "\t\t\t2. Ajustar as configurações de Banco de Dados\n"
+   echo -e "\t\t\t3. Inicializar o Banco de Dados\n"
+   echo -e "\t\t\t4. Encerrar as configurações\n"
+   echo -e -n "\t\t\t	     Opcao ==> "
+   read opcao;
+   case $opcao in
+      1) AjustaRaiz ;;
+      2) ParametrosBD ;;
+      3) InicializaBD ;;
+      4) exit ;;
+      *) echo -e -n "\n\n\t\t\t\e[0;31m==> Opção Desconhecida <==\e[0m "; sleep 1; Principal ;;
+   esac
+}
+AjustaRaiz() {
+
+   path_sistema=`pwd`
+   echo " "
+   echo -e -n "\t\tAjustando o Path da aplicação em cw.inc ... \t\t"
+
+   #  Efetua as modificações no arquivo, usando o sed (ROOTSISTEMA)
+   comando="sed -e 's:/var/www/html/fielcontabil:$path_sistema:g' classes/cw.tmp > classes/cw.001"
+   /bin/sh -c "$comando"
+   cp classes/cw.001 classes/cw.inc
+   rm -f classes/cw.001
+
+   # Ajusta os direitos nos diretórios pdfs e imagens, para que possam fazer uploads, etc.
+   chmod -R 777 pdfs
+   chmod -R 777 uploads
+
+   echo -e '\e[0;32mOk\e[0m'
+   echo " "
+   sleep 2;
+   Principal;
+
+
+}
+ParametrosBD() {
+   echo "Configurações do Banco de Dados"
+   echo "-------------------------------"
+   echo -n "Qual o IP do servidor PostgreSQL ? "
+   read config_ip
+   echo -n "Qual a porta do servidor PostgreSQL (normalmente 5432) ? "
+   read config_porta
+   echo -n "Qual o nome do banco de dados ? "
+   read config_banco
+   echo -n "Qual o nome do usuário para acesso ao banco de dados ? "
+   read config_usuario
+   echo -n "Qual a senha atual do usuário '$config_usuario' ? "
+   read config_senha
+
+   echo -e -n "\t\tAjustando a configuração de conexão ao BD ... \t\t"
+
+   #  Efetua as modificacoes no arquivo, usando o sed (BANCO)
+   comando="sed -e 's/nomebanco/$config_banco/g' config.tmp > config.001"
+   /bin/sh -c "$comando"
+
+   #  Efetua as modificacoes no arquivo, usando o sed (USUARIO)
+   comando="sed -e 's/nomeusuario/$config_usuario/g' config.001 > config.002"
+   /bin/sh -c "$comando"
+
+   #  Efetua as modificacoes no arquivo, usando o sed (SENHA)
+   comando="sed -e 's/senhausuario/$config_senha/g' config.002 > config.003"
+   /bin/sh -c "$comando"
+
+   #  Efetua as modificacoes no arquivo, usando o sed (SERVIDOR)
+   comando="sed -e 's/ipservidor/$config_ip/g' config.003 > config.004"
+   /bin/sh -c "$comando"
+
+   #  Efetua as modificacoes no arquivo, usando o sed (PORTA)
+   comando="sed -e 's/portaservidor/$config_porta/g' config.004 > config.005"
+   /bin/sh -c "$comando"
+
+   cp config.005 config.php
+   rm -f config.0*
+   echo -e '\e[0;32mOk\e[0m'
+   sleep 2;
+   Principal;
+
+}
+
+InicializaBD() {
+   echo "Inicialização do Banco de Dados"
+   echo "-------------------------------"
+   echo "   Esta opção irá criar o banco de dados do FIEL Contábil, com o nome que você especificou";
+   echo "anteriormente. ATENÇÃO !!! Se já existir um banco de dados com este nome,ele será apagado.";
+   echo -e -n "\t\tVocê tem certeza que deseja criar o banco de dados (S/N) ? "
+   read inicializa
+
+   if [ $inicializa = "S" -o $inicializa = "s" ]
+   then
+
+      # Testa se o operador ja definiu o nome do banco de dados anteriormente... (se esta em branco a variavel)
+      if [ -z $config_banco ]
+      then
+	 echo -e -n "Qual o nome do Banco de Dados a ser criado ? ";
+	 read config_banco;
+      fi
+
+      # Testa se o operador ja definiu o nome do usuario do banco de dados anteriormente... (se esta em branco a variavel)
+      if [ -z $config_usuario ]
+      then
+	 echo -n "Qual o nome do usuário para acesso ao banco de dados ? "
+	 read config_usuario;
+      fi
+
+      # Testa se o operador ja definiu a senha do usuario do banco de dados anteriormente... (se esta em branco a variavel)
+      if [ -z $config_senha ]
+      then
+	 echo -n "Qual a senha atual do usuário '$config_usuario' ? "
+	 read config_senha;
+      fi
+
+      echo -e -n "\t\tAjustando a configuração de conexão ao BD ... \t\t"
+
+
+      #  Primeiro exclui o Banco de dados, caso já exista. Tem que deixar um delay de tempo (3 seg)
+      comando="sudo -u postgres dropdb -q $config_banco 2>erros.txt"
+      /bin/sh -c "$comando"
+
+      #  Depois cria o banco de dados
+      comando="sudo -u postgres createdb -q $config_banco 2>>erros.txt"
+      /bin/sh -c "$comando"
+
+      #  Depois da todos os direitos ao usuario
+      echo "CREATE USER $config_usuario PASSWORD '$config_senha';" > direitos.txt
+      echo "GRANT ALL ON DATABASE $config_banco TO $config_usuario;" >> direitos.txt
+
+      comando="sudo -u postgres psql -q $config_banco < direitos.txt 2>>erros.txt"
+      /bin/sh -c "$comando"
+      sleep 2
+
+      echo -e '\e[0;32mOk\e[0m'
+
+      echo -e -n "\t\tImportando o Estrutura das Tabelas (Modelo E-R) ... \t"
+
+      caminhopghba="`find / -name pg_hba.conf`"
+
+      #  Executa o script que cria as tabelas no banco de dados
+      comando="sudo -u postgres psql -q $config_banco < scripts/fielcontabil.sql > apague.txt 2>>erros.txt"
+      /bin/sh -c "$comando"
+
+      #  Executa o script que cria os dados básicos do sistema (empresa 1 e usuário admin)
+      comando="sudo -u postgres psql -q $config_banco < scripts/criaDadosBasicos.sql >> apague.txt 2>>erros.txt"
+      /bin/sh -c "$comando"
+
+      rm -f apague.txt
+
+      echo -e '\e[0;32mOk\e[0m'
+
+      echo -e "\tEdite o arquivo \e[0;36m$caminhopghba\e[0m  e acrescente a seguinte linha"
+      echo -e "\thost	 $config_banco	  all	seu_numero_ip	 sua_netmask   trust"
+
+      echo " "
+      echo -e "\t\t\tDepois, reinicialize o PostgreSQL."
+      echo " "
+      echo -e -n "\t\t\tPressione ENTER  para retornar ao menu..."
+      read tecla
+      rm direitos.txt
+
+
+   fi
+
+
+   Principal;
+
+}
+
+
+Principal
+

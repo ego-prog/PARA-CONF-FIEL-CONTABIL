@@ -1,0 +1,55 @@
+<!-- Estrutura das páginas -->
+.pagina {
+    BACKGROUND-COLOR: #FFFFFF;
+    FONT-FAMILY: Verdana, Arial;
+}
+
+<!-- Titulo da janela -->
+.tjanela {
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 8pt;
+    COLOR: white;
+    HEIGHT: 8pt;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #000000;
+}
+
+
+<!-- Estilo para linha 1 de consulta -->
+.lcons1 {
+    FONT-SIZE: 8pt;
+    COLOR: darkblue;
+    FONT-FAMILY: Verdana, Arial, Courier;
+    BACKGROUND-COLOR: #c0c0c0;
+}
+
+<!-- Estilo para linha 2 de consulta -->
+.lcons2 {
+    FONT-SIZE: 8pt;
+    COLOR: darkblue;
+    FONT-FAMILY: Verdana, Arial, Courier;
+    BACKGROUND-COLOR: white;
+}
+
+<!-- Estilo para os botoes da janela -->
+.bjanela {
+    BORDER-RIGHT: gray 1px solid;
+    BORDER-TOP: white 1px solid;
+    FONT-SIZE: 8pt;
+    BORDER-LEFT: white 1px solid;
+    CURSOR: hand;
+    COLOR: black;
+    BORDER-BOTTOM: gray 1px solid;
+    FONT-FAMILY: Verdana, Arial, 'MS Sans Serif';
+    BACKGROUND-COLOR: lightgrey;
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,926 @@
+<?PHP
+
+	// Abre sessao...
+	@session_start( "cw" );
+
+	// Recebe os atributos de sessão
+	$loginLog      = $loginSession;
+	$numeroIpLog   = $numeroIpSession;
+	$oidEmpresaLog = $oidEmpresaSession;
+	$oidEmpresa    = $oidEmpresaSession;
+
+	setcookie( "oidEmpresaContCookie", $oidEmpresaCont );
+
+?>
+
+<!--
+	Contábil WEB
+	Desenvolvido por APOENA Soluções em Software Livre
+	suporte@apoenasoftwarelivre.com.br
+	http://www.apoenasoftwarelivre.com.br
+
+	Data de Criação: 25/06/2003
+	Última Atualização: 06/07/2003
+	Módulo: cwGravaSupervisao.php
+	  Facade (controller) de acesso as classes de negocios
+-->
+<html>
+<head>
+<title>::Contábil WEB::</title>
+
+<!-- Vincula lista de estilos -->
+<link rel="stylesheet" type="text/css" href="../estilo/cw.css">
+
+</head>
+
+<body class="pagina">
+
+<?PHP
+
+	// Inclui pacote da aplicacao...
+	include "../classes/cw.inc";
+
+	echo "\n<!-- numero da pagina: $numeroPagina -->\n";
+
+	// Mostra mensagem de erro de sessao do CW...
+	$cabec = new TituloCw( $cabecRegOperacaoSupervisao );
+	$cabec->mostra();
+
+	// Verifica tipo de operacao...
+	switch( $tipoOperacao ) {
+
+		// Inclusao de Empresas...
+		case 1: {
+
+			// Instancia classe
+			$empresa = new Empresa();
+
+			// incluindo usuario...
+			$empresa->setEmpresa( $oidEmpresa, $razaoSocial,
+					      $cnpj, $inscricaoEstadual, $inscricaoMunicipal,
+					      $endereco, $bairro, $cidade, $cep, $uf, $eMail,
+					      $dataInicial, $dataFinal, $nomeContador, $registroContador,
+					      $responsavel, $cpfResponsavel, $mascaraPlano, $mascaraDoar );
+
+
+				// Verifica se gravou
+				if ( $empresa->grava() )
+					$msg = new MsgCw( $msgIncluiEmpresaOk );
+				else
+					$msg = new MsgCw( $msgIncluiEmpresa );
+
+				// Exibe mensagem...
+				$msg->mostra();
+
+				// seta atributos para LOG
+				$descricaoLog = $msgLogIncluiEmpresa;
+				$complementoLog = $oidEmpresa." ".$razaoSocial;
+
+			break; }
+
+		// Alteracao de Empresas...
+		case 2: {
+
+			// Instancia classe
+			$empresa = new Empresa();
+
+			$empresa->setEmpresa( $oidEmpresa, $razaoSocial,
+					      $cnpj, $inscricaoEstadual, $inscricaoMunicipal,
+					      $endereco, $bairro, $cidade, $cep, $uf, $eMail,
+					      $dataInicial, $dataFinal, $nomeContador, $registroContador,
+					      $responsavel, $cpfResponsavel, $mascaraPlano, $mascaraDoar );
+
+			$empresa->setOidEmpresaCont( $oidEmpresaCont );
+
+				// Verifica se gravou
+				if ( $empresa->grava( false ) )
+					$msg = new MsgCw( $msgAlteraEmpresaOk,
+						"../imagens/contabil.jpg", "javascript:history.go(-3);" );
+				else
+					$msg = new MsgCw( $msgAlteraEmpresa,
+						"../imagens/contabil.jpg", "javascript:history.go(-3);" );
+
+				// Exibe mensagem...
+				$msg->mostra();
+
+				// seta atributos para LOG
+				$descricaoLog = $msgLogAlteraEmpresa;
+				$complementoLog = $oidEmpresa." ".$oidEmpresaCont;
+
+			break; }
+
+		// Exclusao de Empresas...
+		case 3: {
+
+			// Instancia classe
+			$empresa = new Empresa();
+
+			$empresa->setOidEmpresaCont( $oidEmpresaCont );
+
+			// Verifica se gravou
+			if ( $empresa->exclui() )
+				$msg = new MsgCw( $msgExcluiEmpresaOk,
+					"../imagens/contabil.jpg", "javascript:history.go(-2);" );
+			else
+				$msg = new MsgCw( $msgExcluiEmpresa,
+					"../imagens/contabil.jpg", "javascript:history.go(-2);" );
+
+			// Exibe mensagem...
+			$msg->mostra();
+
+			// seta atributos para LOG
+			$descricaoLog = $msgLogExcluiEmpresa;
+			$complementoLog = $oidEmpresa." ".$oidEmpresaCont;
+
+			break; }
+
+		// Inclusao de Termos...
+		case 4: {
+
+			// Instancia classe
+			$termo = new Termo();
+
+			// incluindo termo...
+			$termo->setTermo( $oidEmpresaCont, $descricao, $texto, $localizacao );
+
+			// Verifica se gravou
+			if ( $termo->grava() )
+			    $msg = new MsgCw( $msgIncluiTermoOk );
+			else
+			    $msg = new MsgCw( $msgIncluiTermo );
+
+			// Exibe mensagem...
+			$msg->mostra();
+
+			// seta atributos para LOG
+			$descricaoLog = $msgLogIncluiTermo;
+			$complementoLog = $oidEmpresa." ".$descricao;
+
+			break; }
+
+		// Alteracao de Termos...
+		case 5: {
+
+			// Instancia classe
+			$termo = new Termo();
+
+			// alterando termo...
+			$termo->setTermo( $oidEmpresaCont, $descricao, $texto, $localizacao );
+
+			$termo->setOidTermo( $oidTermo );
+
+			// Verifica se gravou
+			if ( $termo->grava( false ) )
+			   $msg = new MsgCw( $msgAlteraTermoOk,
+			    "../imagens/contabil.jpg", "javascript:history.go(-3);" );
+			else
+			   $msg = new MsgCw( $msgAlteraTermo,
+			    "../imagens/contabil.jpg", "javascript:history.go(-3);" );
+
+			// Exibe mensagem...
+			$msg->mostra();
+
+			// seta atributos para LOG
+			$descricaoLog = $msgLogAlteraTermo;
+			$complementoLog = $oidEmpresa." ".$oidTermo;
+
+			break; }
+
+		// Exclusao de Termos...
+		case 6: {
+
+			// Instancia classe
+			$termo = new Termo();
+
+			$termo->setOidTermo( $oidTermo );
+
+			// Verifica se gravou
+			if ( $termo->exclui() )
+			   $msg = new MsgCw( $msgExcluiTermoOk,
+			      "../imagens/contabil.jpg", "javascript:history.go(-2);" );
+			else
+			   $msg = new MsgCw( $msgExcluiTermo,
+			      "../imagens/contabil.jpg", "javascript:history.go(-2);" );
+
+			// Exibe mensagem...
+			$msg->mostra();
+
+			// seta atributos para LOG
+			$descricaoLog = $msgLogExcluiTermo;
+			$complementoLog = $oidEmpresa." ".$oidTermo;
+
+			break; }
+
+		// Inclusao de Planos...
+		case 7: {
+
+			// Instancia classe
+			$conta = new Conta();
+
+			// Testa ja existe conta com o codigo informado...
+			if ( !$conta->pesquisaContaInclusao( $codigoSintetico, $oidEmpresaCont ) ) {
+
+				// incluindo Conta...
+				$conta->setConta( $oidEmpresaCont, $codigoSintetico, $descricao, $natureza, 
+						$tipo, $classificacao, $podeCredora, $podeDevedora, $oidContaDoar );
+
+				// Verifica se gravou
+				if ( $conta->grava() )
+					$msg = new MsgCw( $msgIncluiPlanoOk );
+				else
+					$msg = new MsgCw( $msgIncluiPlano );
+
+				// Exibe mensagem...
+				$msg->mostra();
+
+				// seta atributos para LOG
+				$descricaoLog = $msgLogIncluiPlano;
+				$complementoLog = $oidEmpresa." ".$codigoSintetico;
+
+			}
+			else {
+				// Exibe mensagem...
+				$msg = new MsgCw( $msgJaExisteContaCodigo );
+				$msg->mostra(); }
+
+			break; }
+
+		// Alteracao de Planos...
+		case 8: {
+
+			// Instancia classe
+			$conta = new Conta();
+
+			// incluindo Conta...
+			$conta->setConta( $oidEmpresaCont, $codigoSintetico, $descricao, $natureza, 
+						$tipo, $classificacao, $podeCredora, $podeDevedora, $oidContaDoar );
+
+			$conta->setOidContaDV( $oidPlano );
+
+			// Verifica se gravou
+			if ( $conta->grava(false) )
+				$msg = new MsgCw( $msgAlteraPlanoOk,
+					"../imagens/contabil.jpg", "javascript:history.go(-3);" );
+			else
+				$msg = new MsgCw( $msgAlteraPlano,
+					"../imagens/contabil.jpg", "javascript:history.go(-3);" );
+
+			// Exibe mensagem...
+			$msg->mostra();
+
+			// seta atributos para LOG
+			$descricaoLog = $msgLogAlteraPlano;
+			$complementoLog = $oidEmpresa." ".$oidPlano;
+
+			break; }
+
+		// Exclusao de Planos...
+		case 9: {
+
+			// Instancia classe
+			$conta = new Conta();
+
+			$conta->setOidContaDV( $oidPlano );
+
+			// Verifica se gravou
+			if ( $conta->exclui() )
+				$msg = new MsgCw( $msgExcluiPlanoOk,
+					"../imagens/contabil.jpg", "javascript:history.go(-2);" );
+			else
+				$msg = new MsgCw( $msgExcluiPlano,
+					"../imagens/vox_logo.jpg", "javascript:history.go(-2);" );
+
+			// Exibe mensagem...
+			$msg->mostra();
+
+			// seta atributos para LOG
+			$descricaoLog = $msgLogExcluiPlano;
+			$complementoLog = $oidEmpresa." ".$oidPlano;
+
+			break; }
+
+		// Inclusao de DOAR...
+		case 10: {
+
+			// Instancia classe
+			$doar = new ContaDoar();
+
+			// Testa ja existe conta com o codigo informado...
+			if ( !$doar->pesquisaContaDoar( $codigoSintetico, $oidEmpresaCont ) ) {
+
+				// incluindo doar...
+				$doar->setOidContaDoar( $codigoSintetico );
+				$doar->setContaDoar( $oidEmpresaCont, $descricao,
+						$tipo );
+
+				// Verifica se gravou
+				if ( $doar->grava() )
+					$msg = new MsgCw( $msgIncluiDoarOk );
+				else
+					$msg = new MsgCw( $msgIncluiDoar );
+
+				// Exibe mensagem...
+				$msg->mostra();
+
+				// seta atributos para LOG
+				$descricaoLog = $msgLogIncluiDoar;
+				$complementoLog = $oidEmpresa." ".$codigoSintetico;
+
+			}
+			else {
+				// Exibe mensagem...
+				$msg = new MsgCw( $msgJaExisteDoarCodigo );
+				$msg->mostra(); }
+
+			break; }
+
+		// Alteracao de DOAR...
+		case 11: {
+
+			// Instancia classe
+			$doar = new ContaDoar();
+
+			// incluindo doar...
+			$doar->setOidContaDoar( $oidDoar );
+			$doar->setContaDoar( $oidEmpresaCont, $descricao,
+					$tipo );
+
+			// Verifica se gravou
+			if ( $doar->grava(false) )
+				$msg = new MsgCw( $msgAlteraDoarOk,
+					"../imagens/contabil.jpg", "javascript:history.go(-3);" );
+			else
+				$msg = new MsgVox( $msgAlteraDoar,
+					"../imagens/contabil.jpg", "javascript:history.go(-3);" );
+
+			// Exibe mensagem...
+			$msg->mostra();
+
+			// seta atributos para LOG
+			$descricaoLog = $msgLogAlteraDoar;
+			$complementoLog = $oidEmpresa." ".$codigoSintetico;
+
+			break; }
+
+		// Exclusao de DOAR...
+		case 12: {
+
+			// Instancia classe
+			$doar = new ContaDoar();
+
+			$doar->setOidContaDoar( $oidDoar );
+
+			// Verifica se gravou
+			if ( $doar->exclui() )
+				$msg = new MsgCw( $msgExcluiDoarOk,
+					"../imagens/contabil.jpg", "javascript:history.go(-2);" );
+			else
+				$msg = new MsgCw( $msgExcluiDoar,
+					"../imagens/contabil.jpg", "javascript:history.go(-2);" );
+
+			// Exibe mensagem...
+			$msg->mostra();
+
+			// seta atributos para LOG
+			$descricaoLog = $msgLogExcluiDoar;
+			$complementoLog = $oidEmpresa." ".$oidDoar;
+
+			break; }
+
+		// Inclusao de Historico...
+		case 13: {
+
+			// Instancia classe
+			$historicoPadrao = new HistoricoPadrao();
+
+			// incluindo historico...
+			$historicoPadrao->setHistoricoPadrao( $oidEmpresaCont, $historico );
+
+			// Verifica se gravou
+			if ( $historicoPadrao->grava() )
+				$msg = new MsgCw( $msgIncluiHistoricoOk );
+			else
+				$msg = new MsgCw( $msgIncluiHistorico );
+
+			// Exibe mensagem...
+			$msg->mostra();
+
+			// seta atributos para LOG
+			$descricaoLog = $msgLogIncluiHistorico;
+			$complementoLog = $oidEmpresa." ".$historico;
+
+			break; }
+
+		// Alteracao de Historico...
+		case 14: {
+
+			// Instancia classe
+			$historicoPadrao = new HistoricoPadrao();
+
+			// incluindo historico...
+			$historicoPadrao->setHistoricoPadrao( $oidEmpresaCont, $historico );
+
+			$historicoPadrao->setOidHistorico( $oidHistorico );
+
+			// Verifica se gravou
+			if ( $historicoPadrao->grava(false) )
+				$msg = new MsgCw( $msgAlteraHistoricoOk,
+					"../imagens/contabil.jpg", "javascript:history.go(-3);" );
+			else
+				$msg = new MsgCw( $msgAlteraHistorico,
+					"../imagens/contabil.jpg", "javascript:history.go(-3);" );
+
+			// Exibe mensagem...
+			$msg->mostra();
+
+			// seta atributos para LOG
+			$descricaoLog = $msgLogAlteraHistorico;
+			$complementoLog = $oidEmpresa." ".$oidHistorico;
+
+			break; }
+
+		// Exclusao de Historico...
+		case 15: {
+
+			// Instancia classe
+			$historico = new HistoricoPadrao();
+
+			$historico->setOidHistorico( $oidHistorico );
+
+			// Verifica se gravou
+			if ( $historico->exclui() )
+				$msg = new MsgCw( $msgExcluiHistoricoOk,
+					"../imagens/contabil.jpg", "javascript:history.go(-2);" );
+			else
+				$msg = new MsgCw( $msgExcluiHistorico,
+					"../imagens/contabil.jpg", "javascript:history.go(-2);" );
+
+			// Exibe mensagem...
+			$msg->mostra();
+
+			// seta atributos para LOG
+			$descricaoLog = $msgLogExcluiHistorico;
+			$complementoLog = $oidEmpresa." ".$oidHistorico;
+
+			break; }
+
+		// Inclusao de Orcamento...
+		case 16: {
+
+			// Instancia classe
+			$orcamento = new Orcamento();
+			
+			$oidConta = explode( ".", $oidContaDV );
+
+			// Testa orcamento...
+			if ( !$orcamento->pesquisaOrcamento( $oidConta[0], $ano ) ) {
+
+				$previsto = array( $previsto01, $previsto02, $previsto03, $previsto04,
+					$previsto05, $previsto06, $previsto07, $previsto08, $previsto09,
+					$previsto010, $previsto011, $previsto012 );   
+				
+				// incluindo orcamento...
+				$orcamento->setOrcamento( $oidConta[0], $ano, $previsto );
+
+				// Verifica se gravou
+				if ( $orcamento->grava() )
+					$msg = new MsgCw( $msgIncluiOrcamentoOk );
+				else
+					$msg = new MsgCw( $msgIncluiOrcamento );
+
+				// Exibe mensagem...
+				$msg->mostra();
+
+				// seta atributos para LOG
+				$descricaoLog = $msgLogIncluiOrcamento;
+				$complementoLog = $oidConta[0]." ".$ano;
+
+			}
+			else {
+				// Exibe mensagem...
+				$msg = new MsgCw( $msgJaExisteOrcamentoContaAno );
+				$msg->mostra(); }
+
+			break; }
+
+		// Alteracao de Orcamento...
+		case 17: {
+
+			// Instancia classe
+			$orcamento = new Orcamento();
+
+			// incluindo orcamento...
+			$previsto = array( $previsto01, $previsto02, $previsto03, $previsto04,
+					$previsto05, $previsto06, $previsto07, $previsto08, $previsto09,
+					$previsto010, $previsto011, $previsto012 );   
+				
+			// incluindo orcamento...
+			$orcamento->setOrcamento( $oidConta, $ano, $previsto );
+
+			// Verifica se gravou
+			if ( $orcamento->grava(false) )
+				$msg = new MsgCw( $msgAlteraOrcamentoOk,
+					"../imagens/contabil.jpg", "javascript:history.go(-3);" );
+			else
+				$msg = new MsgCw( $msgAlteraOrcamento,
+					"../imagens/contabil.jpg", "javascript:history.go(-3);" );
+
+			// Exibe mensagem...
+			$msg->mostra();
+
+			// seta atributos para LOG
+			$descricaoLog = $msgLogAlteraOrcamento;
+			$complementoLog = $oidConta." ".$ano;
+
+			break; }
+
+		// Exclusao de Orcamento...
+		case 18: {
+
+			// Instancia classe
+			$orcamento = new Orcamento();
+
+			$oidConta = explode( "_", $oidOrcamento );
+			$orcamento->setOidConta( $oidConta[0] );
+			$orcamento->setAno( $oidConta[1] );
+
+			// Verifica se gravou
+			if ( $orcamento->exclui() )
+				$msg = new MsgCw( $msgExcluiOrcamentoOk,
+					"../imagens/contabil.jpg", "javascript:history.go(-2);" );
+			else
+				$msg = new MsgCw( $msgExcluiOrcamento,
+					"../imagens/contabil.jpg", "javascript:history.go(-2);" );
+
+			// Exibe mensagem...
+			$msg->mostra();
+
+			// seta atributos para LOG
+			$descricaoLog = $msgLogExcluiOrcamento;
+			$complementoLog = $oidConta[0]." ".$oidConta[1];
+
+			break; }
+
+		// Libera lancamento para contabilidade...
+		case 19: {
+
+			// Instancia classe
+			$lancamento = new Lancamento();
+			
+			$lista = $lancamento->buscaLancamentosPeriodo( $dataInicial, $dataFinal, 
+		 				$oidEmpresaCont, $loginUsuario );	
+
+			// Testa array de lancamentos liberados...
+			$flagAlterou = true;
+			for ( $indx = 0; $indx < sizeof( $lista ); $indx++ ) {
+			    $nomeCampo = "lanc_".$lista[$indx][0];
+				if ( @$$nomeCampo == "on" ) {
+					$lancamento->setLiberaLancamento( $lista[$indx][0], date( "d/m/Y" ),
+						date( "H:i" ), 
+						$loginUsuario, "S" );
+						$flagAlterou = $lancamento->gravaLiberacao();
+				}
+			}
+
+			if ( $flagAlterou )
+				$msg = new MsgCw( $msgLiberaLancOk,
+					"../imagens/contabil.jpg", "javascript:history.go(-2);" );
+			else
+				$msg = new MsgCw( $msgLiberaLanc,
+					"../imagens/contabil.jpg", "javascript:history.go(-2);" );
+
+			// Exibe mensagem...
+			$msg->mostra();
+
+			// seta atributos para LOG
+			$descricaoLog = $msgLogLiberaLanc;
+			$complementoLog = $oidEmpresaCont." ".date( "d/m/Y" );
+
+			break; }
+
+		// Exclui lancamento...
+		case 20: {
+
+			// Instancia classe
+			$lancamento     = new Lancamento();
+			$itemLancamento = new ItemLancamento();
+			
+			$lista = $lancamento->buscaLancamentosPeriodo( $dataInicial, $dataFinal, 
+		 				$oidEmpresaCont, $loginUsuario );	
+
+			// Testa array de lancamentos excluidos...
+			$flagExcluiu = true;
+			for ( $indx = 0; $indx < sizeof( $lista ); $indx++ ) {
+			    $nomeCampo = "lanc_".$lista[$indx][0];
+				if ( @$$nomeCampo == "on" ) {
+					if ( $itemLancamento->excluiLancamento( $lista[$indx][0] ) ) {
+						$lancamento->setOidLancamento( $lista[$indx][0] );
+						$flagExcluiu = $lancamento->exclui();
+					}
+				}
+			}
+
+			if ( $flagExcluiu )
+				$msg = new MsgCw( $msgExcluiLancamentoOk,
+					"../imagens/contabil.jpg", "javascript:history.go(-2);" );
+			else
+				$msg = new MsgCw( $msgExcluiuLancamento,
+					"../imagens/contabil.jpg", "javascript:history.go(-2);" );
+
+			// Exibe mensagem...
+			$msg->mostra();
+
+			// seta atributos para LOG
+			$descricaoLog = $msgLogExcluiLancamento;
+			$complementoLog = $oidEmpresa." ".date( "d/m/Y" );
+
+			break; }
+
+		// Inclusao de Notas...
+		case 21: {
+
+			// Instancia classe
+			$nota = new Nota();
+
+			// incluindo nota explicativa...
+			$nota->setNotaExplicativa( $oidEmpresaCont, $notaExplicativa );
+
+			// Verifica se gravou
+			if ( $nota->grava() )
+				$msg = new MsgCw( $msgIncluiNotaOk );
+			else
+				$msg = new MsgCw( $msgIncluiNota );
+
+			// Exibe mensagem...
+			$msg->mostra();
+
+			// seta atributos para LOG
+			$descricaoLog = $msgLogIncluiNota;
+			$complementoLog = $oidEmpresa." ".$notaExplicativa;
+
+			break; }
+
+		// Alteracao de Notas...
+		case 22: {
+
+			// Instancia classe
+			$nota = new Nota();
+
+			// incluindo nota explicativa...
+			$nota->setNotaExplicativa( $oidEmpresaCont, $notaExplicativa );
+
+			$nota->setOidNota( $oidNota );
+
+			// Verifica se gravou
+			if ( $nota->grava(false) )
+				$msg = new MsgCw( $msgAlteraNotaOk,
+					"../imagens/contabil.jpg", "javascript:history.go(-3);" );
+			else
+				$msg = new MsgCw( $msgAlteraNota,
+					"../imagens/contabil.jpg", "javascript:history.go(-3);" );
+
+			// Exibe mensagem...
+			$msg->mostra();
+
+			// seta atributos para LOG
+			$descricaoLog = $msgLogAlteraNota;
+			$complementoLog = $oidEmpresa." ".$oidNota;
+
+			break; }
+
+		// Exclusao de Notas...
+		case 23: {
+
+			// Instancia classe
+			$nota = new Nota();
+
+			$nota->setOidNota( $oidNota );
+
+			// Verifica se gravou
+			if ( $nota->exclui() )
+				$msg = new MsgCw( $msgExcluiNotaOk,
+					"../imagens/contabil.jpg", "javascript:history.go(-2);" );
+			else
+				$msg = new MsgCw( $msgExcluiNota,
+					"../imagens/contabil.jpg", "javascript:history.go(-2);" );
+
+			// Exibe mensagem...
+			$msg->mostra();
+
+			// seta atributos para LOG
+			$descricaoLog = $msgLogExcluiNota;
+			$complementoLog = $oidEmpresa." ".$oidNota;
+
+			break; }
+
+		// Inclusao de Zeramentos...
+		case 24: {
+
+			// Instancia classe
+			$zeramento = new Zeramento();
+
+			$codigoSintetico = explode( ".", $codigoSintetico );
+			$tempGrupo       = explode( ".", $grupo01 );
+			$grupo01         = $tempGrupo[0];
+			$tempGrupo       = explode( ".", $grupo02 );
+			$grupo02         = $tempGrupo[0];
+			$tempGrupo       = explode( ".", $grupo03 );
+			$grupo03         = $tempGrupo[0];
+			$tempGrupo       = explode( ".", $grupo04 );
+			$grupo04         = $tempGrupo[0];
+			$tempGrupo       = explode( ".", $grupo05 );
+			$grupo05         = $tempGrupo[0];
+			
+			// Testa zeramento...
+			if ( !$zeramento->pesquisaZeramentoInclusao( $oidEmpresaCont, 
+					$codigoSintetico[0] ) ) {
+
+				// seta zeramento...
+				$zeramento->setZeramento( $oidEmpresaCont, $codigoSintetico[0],
+					$grupo01, $grupo02, $grupo03, $grupo04, $grupo05 );
+
+				// Verifica se gravou
+				if ( $zeramento->grava() )
+					$msg = new MsgCw( $msgIncluiZeramentoOk );
+				else
+					$msg = new MsgCw( $msgIncluiZeramento );
+
+				// Exibe mensagem...
+				$msg->mostra();
+
+				// seta atributos para LOG
+				$descricaoLog = $msgLogIncluiZeramento;
+				$complementoLog = $oidEmpresaCont." ".$codigoSintetico[0];
+
+			}
+			else {
+				// Exibe mensagem...
+				$msg = new MsgCw( $msgJaExisteZeramentoEmpresaConta );
+				$msg->mostra(); }
+
+			break; }
+
+		// Exclusao de Zeramentos...
+		case 26: {
+
+			// Instancia classe
+			$zeramento = new Zeramento();
+
+			$zeramento->setOidZeramento( $oidZeramento );
+
+			// Verifica se gravou
+			if ( $zeramento->exclui() )
+				$msg = new MsgCw( $msgExcluiZeramentoOk,
+					"../imagens/contabil.jpg", "javascript:history.go(-2);" );
+			else
+				$msg = new MsgCw( $msgExcluiZeramento,
+					"../imagens/contabil.jpg", "javascript:history.go(-2);" );
+
+			// Exibe mensagem...
+			$msg->mostra();
+
+			// seta atributos para LOG
+			$descricaoLog = $msgLogExcluiZeramento;
+			$complementoLog = $oidEmpresa." ".$oidZeramento;
+
+			break; }
+
+		// Zeramento de Contas de Resultado...
+		case 27: {
+
+			// Instancia classe
+			$zeramento        = new Zeramento();
+			$conta            = new Conta();
+			$lancamento       = new Lancamento();
+			$empresa          = new Empresa();
+			$listaLancamentos = array();
+		 
+		 	$empresa->pesquisaEmpresa( $oidEmpresaCont );
+		 
+		 	$zeramento->setaZeramento( $oidEmpresaCont );
+			$oidZeramento = $lancamento->buscaOidZeramento( $oidEmpresaCont );
+		 
+		 	$listaGrupos = array( $zeramento->getGrupo1(), $zeramento->getGrupo2(),
+		 			$zeramento->getGrupo3(), $zeramento->getGrupo4(), $zeramento->getGrupo5() );
+		 
+		 	for ( $indx = 0; $indx < sizeof( $listaGrupos ); $indx++ ) {
+				if ( $listaGrupos[$indx] > 0 ) {
+					$conta->pesquisaContaSemDV( $listaGrupos[$indx] );
+					$listaConta[$indx] = $conta->buscaConta( $oidEmpresaCont, 
+												$conta->getCodigoSintetico(), 5 );
+				}
+		 	}
+		 
+		 	for ( $indx = 0; $indx < sizeof( $listaConta ); $indx++ )
+		 		for ( $indy = 0; $indy < sizeof( $listaConta[$indx] ); $indy++ ) {
+					$saldo = $lancamento->buscaSaldoConta( $listaConta[$indx][$indy][0],
+							$dataLimite, "S" );
+					if ( $saldo != 0 )
+						$listaLancamentos[] = array( $listaConta[$indx][$indy][0], $saldo );
+				}
+
+			for ( $indx = 0; $indx < sizeof( $listaLancamentos ); $indx++ ) {
+
+				// Lanca o debito...
+				if ( $listaLancamentos[$indx][1] > 0 ) {
+				
+					// Cria um novo lancamento...
+					$lancamento->setLancamento( $oidEmpresaCont, $dataLanc, date( "d/m/Y" ), 
+							date( "h:i:s" ), $loginUsuario, "S" );
+					
+					// Cria o cabecalho do lancamento...
+					$lancamento->grava();
+
+					// Busca OID de lancamento...
+					$lancamento->buscaOidLancamento( $dataLanc, $loginUsuario, $oidEmpresaCont );
+				
+					// Inclui item de lancamento...
+					$resposta = $lancamento->incluiItemLancamento( $lancamento->getOidLancamento(), 
+										$zeramento->getContrapartida(), $historicoDestino, $listaLancamentos[$indx][1],
+										"D", $oidZeramento );				
+				
+					// Inclui item de lancamento...
+					$resposta = $lancamento->incluiItemLancamento( $lancamento->getOidLancamento(), 
+										$listaLancamentos[$indx][0], $historico, $listaLancamentos[$indx][1],
+										"C", $oidZeramento );				
+
+					// Fecha lancamento...							
+					$lancamento->grava( false );
+
+					// Contabiliza lancamento...
+					$lancamento->setLiberaLancamento( $lancamento->getOidLancamento(), date( "d/m/Y" ),
+						date( "H:i" ), 
+						$loginUsuario, "S" );
+					$resposta = $lancamento->gravaLiberacao();
+										
+			}
+
+				// Lanca o credito...
+				if ( $listaLancamentos[$indx][1] < 0 ) {
+				
+					// Lancar um credito na contrapartida
+					// Cria um novo lancamento...
+					$lancamento->setLancamento( $oidEmpresaCont, $dataLanc, date( "d/m/Y" ), 
+							date( "h:i:s" ), $loginUsuario, "S" );
+					
+					// Cria o cabecalho do lancamento...
+					$lancamento->grava();
+
+					// Busca OID de lancamento...
+					$lancamento->buscaOidLancamento( $dataLanc, $loginUsuario, $oidEmpresaCont );
+				
+					// Inclui item de lancamento...
+					$saldo = $listaLancamentos[$indx][1] * -1;
+
+					// Inclui item de lancamento...
+					$resposta = $lancamento->incluiItemLancamento( $lancamento->getOidLancamento(), 
+						$listaLancamentos[$indx][0], $historico, $saldo,
+						"D", $oidZeramento );				
+
+					// Inclui item de lancamento...
+					$resposta = $lancamento->incluiItemLancamento( $lancamento->getOidLancamento(), 
+						$zeramento->getContrapartida(), $historicoDestino, $saldo,
+						"C", $oidZeramento );				
+
+					// Fecha lancamento...							
+					$lancamento->grava( false );
+
+					// Contabiliza lancamento...
+					$lancamento->setLiberaLancamento( $lancamento->getOidLancamento(), date( "d/m/Y" ),
+						date( "H:i" ), 
+						$loginUsuario, "S" );
+					
+					$resposta = $lancamento->gravaLiberacao();
+
+	       		}
+		   
+			}
+
+			// Verifica se gravou
+			if ( $resposta )
+				$msg = new MsgCw( $msgZeramentoContasOk,
+					"../imagens/contabil.jpg", "javascript:history.go(-2);" );
+			else
+				$msg = new MsgCw( $msgZeramentoContas,
+					"../imagens/contabil.jpg", "javascript:history.go(-2);" );
+
+			// Exibe mensagem...
+			$msg->mostra();
+
+			// seta atributos para LOG
+			$descricaoLog   = $msgLogZeramentoContas;
+			$complementoLog = $oidEmpresa." ".$oidZeramento;
+
+			break; }
+
+	}
+
+	// Registra operacoes no LOG
+	$log = new LogCw();
+	$log->setLogCw( $oidEmpresaLog, $loginLog,
+					 $numeroIpLog, $descricaoLog, $complementoLog );
+	$log->grava();
+?>
+</body>
+
+</html>

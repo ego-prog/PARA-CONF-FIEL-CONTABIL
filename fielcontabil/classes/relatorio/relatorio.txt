@@ -1,0 +1,42 @@
+Framework de Relatório
+----------------------
+
+	Desenvolvido por APOENA Software Livre
+	http://www.apoenasoftwarelivre.com.br
+
+	Autor: Guilherme Silva de Lacerda (guilherme@apoenasoftwarelivre.com.br)
+	Data de criação: 20/04/2002
+	Data de alteração: 20/05/2002
+
+
+APRESENTAÇÃO
+------------
+
+	O Framework de Relatório desenvolvido pela APOENA Software Livre compreende
+de uma hierarquia de classes organizadas lógicamente, que permite a utilização
+das funções de relatórios diversos nas aplicações.
+
+
+COMPONENTES
+-----------
+
+- AbstractFormat - Superclasse com as definições dos relatórios.
+- RelatorioHTML  - Cria relatórios formato HTML.
+- Grafico        - Cria gráficos para apresentação na Web.
+- RelatorioPS    - Cria relatórios formato PostScript.
+- RelatorioPDF   - Cria relatórios Portable Document Format.
+
+
+
+USO DO FRAMEWORK
+----------------
+
+	Para usar o framework, é necessário incluir o arquivo "framework_relatorio.inc"
+e utilizar o esqueleto de classes pré-definidas, estendendo suas funcionalidades para a 
+aplicação específica.
+
+	Geralmente, se utiliza com a seguinte definição:
+	RelatorioHTMLSac, GraficoSac...
+	
+	
+	Não se pode esquecer de setar o PATH ($pathClassesRelatorio)

@@ -1,0 +1,85 @@
+#!/bin/bash
+# Script para geração do arquivo de distribuição do FIEL Contábil.
+#-----------------------------------------------------------------
+# Nosso agradecimento para Hugo Cisneiros (hugo@devin.com.br)
+# pelas valorosas informacoes disponibilizadas sobre shell script
+# em http://www.devin.com.br/eitch/shell_script/
+#-----------------------------------------------------------------
+
+Principal() {
+   clear
+   echo "Atualização do Fiel Contábil"
+   echo "----------------------------------------------------------------------------------------"
+   echo "Este script atualiza o Programa Fiel Contábil. Você precisa ter instalado em seu sistema"
+   echo "os utilitários wget e unzip."
+   echo "----------------------------------------------------------------------------------------"
+   echo -n "Pressione qualquer tecla para iniciar..."
+   read tecla;
+   atualizasist;
+}
+
+# Pega o path atual - Diretório onde está instalado o FIEL Contábil
+fiel = `pwd`
+
+atualizasist() {
+   # cd $fiel
+   echo "Instruções:"
+   echo " "
+
+   echo -e -n "\t\tDownload da versão atualizada do Fiel Contábil....................\t"
+   # wget -c http://www.apoenasoftwarelivre.com.br/fielcontabil/fielcontabil.zip
+   echo -e '\e[0;32mOk\e[0m'
+
+   echo -e -n "\t\tCriar o diretório /tmp/fielcontabil................................\t"
+   mkdir /tmp/fielcontabil
+   mkdir /tmp/fielcontabil/classes
+   mkdir /tmp/fielcontabil/pdfs
+   mkdir /tmp/fielcontabil/uploads
+   echo -e '\e[0;32mOk\e[0m'
+
+   echo -e -n "\t\tTransferência dos arq.de configuração para o diretório temporário..\t"
+   # cp $fiel/classes/cw.inc  /tmp/fielcontabil/classes/
+   # cp $fiel/config.php  /tmp/fielcontabil
+   # cp -rf $fiel/pdfs/*  /tmp/fielcontabil/pdfs/
+   # cp -rf $fiel/uploads/*  /tmp/fielcontabil/uploads/
+   echo -e '\e[0;32mOk\e[0m'
+
+   echo -e -n "\t\tExtrair o arquivo fielcontabil.zip no diretório do fielcontabil....\t"
+   # unzip -d $fiel fielcontabil.zip
+   echo -e '\e[0;32mOk\e[0m'
+
+   echo -e -n "\t\tCopiar os arquivos no diretório temporário..........................\t"
+   # cp /tmp/fielcontabil/config.php $fiel
+   # cp /tmp/fielcontabil/cw.inc $fiel/classes
+   # cp -rf /tmp/fielcontabil/uploads  $fiel
+   # cp -rf /tmp/fielcontabil/pdfs $fiel
+   echo -e '\e[0;32mOk\e[0m'
+
+   echo "Atualizamos seus  sistema, agora confira no seu navegador se tudo está rodando normalmente..."
+   sleep 2
+   read -n 1 -p "Você deseja deletar a pasta /tmp/fielcontabil... S / N :" pergunta
+
+   if [ $pergunta = 'S' -o $pergunta = 's' -o $pergunta = 'N' -o $pergunta = 'n' ] then
+       if [ $pergunta = 'S' -o $pergunta = 's' ] then
+         echo -e "\n"
+         #  rm -rf /tmp/fielcontabil
+         echo "Deletamos o diretório /tmp/fielcontabil... até a próxima !"
+         sleep 6
+         clear
+       else
+         echo -e "\n"
+         echo "Você optou por não deletar o diretório temporário."
+         sleep 2
+       fi
+   else
+       echo -e "\n"
+       echo "ERRO: Sua resposta está incorreta. Digite S ou N ... "
+       sleep 1
+       pergunta
+   fi
+
+   echo "Pronto ,seu Fiel Contábil já está atualizado."
+   sleep 5
+}
+
+Principal

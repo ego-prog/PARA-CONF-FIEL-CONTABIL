@@ -1,0 +1,49 @@
+FIEL Contábil ChangeLog
+
+Versão 2.5 - 19.03.2007
+-----------------------
+. Alterado o tipo de campo em itemlancamento_cont.valor para numeric(15,2).
+
+Versão 2.4 - 21.08.2006
+-----------------------
+. Corrigido um bug na impressão de razão quando havia mais de uma empresa cadastrada
+. Alterada a emissão de razão para não apresentar lançamentos em aberto
+. Acrescentada a opção para incluir mais itens em lançamentos durante a alteração
+. Incluído a informação da versão do sistema no frame superior
+
+Versão 2.3 - 14.06.2006
+----------
+. Criada a opção para Relatório Balancete Analítico em formato TXT
+. Criada a opção para Relatório Plano de Contas em formato TXT
+. Criada a opção para Relatório Demonstrativo de Resultados em formato TXT
+. Criada a opção para Relatório Balanço em formato TXT
+. Corrigido uma vulnerabilidade que permitia altera as contas anlíticas, tornando-as sintéticas
+. Corrigido um bug na impressão do código do lançamento no razão analítico
+
+Versão 2.2 - 22.02.2006
+----------
+. Modificado o algoritmo de impressão do Razão, para que seja gerado de forma mais rápida
+. Criada a opção para emitir o razão de todas as contas do plano
+
+Versão 2.1 - 24.01.2006
+---------
+. Criada a opção de Cópia de Plano de Contas entre empresas.
+
+Versão 2.0 - 18.01.2006
+----------
+. Incluída a possibilidade de alterar o centro de custo de um lançamento;
+. Relatório Diário de Lançamentos com sub-totais diários (opcionais);
+. Novo script de instalação;
+. Atualização do script de instalação (install);
+. Adicionado recurso para imprimir razão analítico por grupo.
+
+Versão 1.1 - 19.12.2005
+----------
+. Incluído recurso para upload de imagens vinculados aos lançamentos;
+. Incluído recurso para controle de despesas por Centro de Custo;
+
+
+Versão 1.0 - 01.03.2004
+----------
+. Sistema funcional
+

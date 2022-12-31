@@ -1,0 +1,2950 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="i18n_php.xsl"?>
+
+<!--
+	APOENA Software Livre
+	Framework de Documentacao de Software
+	Contábil Web
+	Autor: Guilherme Lacerda
+	Data: 26/05/2003
+	Última alteração: 26/05/2003
+	Arquivo: cw_aplicacao.xml
+	Proposito: Mantem as principais informacoes sobre a aplicacao,
+	incluindo internacionalizacao, help on-line e documentacao tecnica.
+-->
+
+<documento>
+
+<!--
+
+	Internacionalizacao de Software
+	i18n		- contem todos os rotulos de internacionalizacao
+	rotulo		- rotulo utilizado no codigo fonte
+	termo		- palavra de substituicao
+	significado - termo substituto do rotulo
+-->
+
+<i18n>
+
+	<!-- Cabecalhos e titulos da aplicacao -->
+
+	<rotulo>
+	<termo>tituloSistema</termo>
+	<significado>Contábil WEB</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>cabecTituloPrincipal</termo>
+	<significado>Login - Menu Principal</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>cabecTituloAdmin</termo>
+	<significado>Login - Menu Principal - Menu Administração</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>cabecTituloAtualizaParametro</termo>
+	<significado>Alteração de Parâmetros</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloAtualizaParametro</termo>
+	<significado>Alteração de Parâmetros</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>cabecTituloAltSenha</termo>
+	<significado>Alteração de Senha de Usuário</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>cabecRegOperacaoAdmin</termo>
+	<significado>Administração do Sistema</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>cabecRegOperacaoSupervisao</termo>
+	<significado>Supervisão do Sistema</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>cabecRegOperacaoOperacao</termo>
+	<significado>Operação do Sistema</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloEdCons</termo>
+	<significado>Editor de Consulta</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloPesquisa</termo>
+	<significado>Informe os dados para pesquisa</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloAltSenha</termo>
+	<significado>Alteração de Senha</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloJanelaLogin</termo>
+	<significado>Acesso ao Contábil WEB</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>cabecUsuarioNaoAutorizado</termo>
+	<significado>Login - Mensagem de Erro</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>cabecLogout</termo>
+	<significado>Login - Menu Principal - Logout</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>cabecTituloEdCons</termo>
+	<significado>Editor de Consulta</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>cabecErroSession</termo>
+	<significado>Erro na Sessão</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>cabecTituloAltSenha</termo>
+	<significado>Alteração de Senha de Usuário</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>cabecCadUsuario</termo>
+	<significado>Cadastro de Usuários</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>cabecConsLog</termo>
+	<significado>Consulta de LOG do Sistema</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloConsLog</termo>
+	<significado>Consulta de LOG do Sistema</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloAlteracao</termo>
+	<significado>Alteração no Cadastro</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloPesquisaItem</termo>
+	<significado>Selecione um item</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloCadUsuario</termo>
+	<significado>Cadastro de Usuários</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloVincUsuario</termo>
+	<significado>Vincular Usuários a Empresas</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>cabecRelatPers</termo>
+	<significado>Relatórios Personalizados</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloRelatPers</termo>
+	<significado>Relatórios Personalizados</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>cabecCadEmpresa</termo>
+	<significado>Cadastro de Empresas</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloCadEmpresa</termo>
+	<significado>Cadastro de Empresas</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>cabecCadCentro</termo>
+	<significado>Cadastro de Centros de Custo</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloCadCentro</termo>
+	<significado>Cadastro de Centros de Custo</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>cabecCadTermo</termo>
+	<significado>Cadastro de Termos de Abertura e Encerramento</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloCadTermo</termo>
+	<significado>Cadastro de Termos de Abertura e Encerramento</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>cabecCadPlano</termo>
+	<significado>Cadastro de Plano de Contas</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloCadPlano</termo>
+	<significado>Cadastro de Plano de Contas</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>cabecCadDoar</termo>
+	<significado>Cadastro de Contas DOAR</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloCadDoar</termo>
+	<significado>Cadastro de Contas DOAR</significado>
+	</rotulo>
+
+	<termo>cabecCadHistorico</termo>
+	<significado>Cadastro de Históricos Padrões</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloCadHistorico</termo>
+	<significado>Cadastro de Históricos Padrões</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>cabecCadOrcamento</termo>
+	<significado>Cadastro de Orçamento Anual</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloCadOrcamento</termo>
+	<significado>Cadastro de Orçamento Anual</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloPlanoSintetico</termo>
+	<significado>Listagem do Plano de Contas</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>cabecConsDiario</termo>
+	<significado>Diário de Lançamentos</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloConsDiario</termo>
+	<significado>Diário de Lançamentos</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>cabecConsAnalitico</termo>
+	<significado>Balancete Analítico</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloConsAnalitico</termo>
+	<significado>Balancete Analítico</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>cabecConsSintetico</termo>
+	<significado>Balancete Sintético</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloConsSintetico</termo>
+	<significado>Balancete Sintético</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>cabecConsPlano</termo>
+	<significado>Plano de Contas</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloConsPlano</termo>
+	<significado>Plano de Contas</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>cabecConsPlanoDoar</termo>
+	<significado>Plano de Contas DOAR</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloConsPlanoDoar</termo>
+	<significado>Plano de Contas DOAR</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>cabecConsBalanco</termo>
+	<significado>Balanço</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloConsBalanco</termo>
+	<significado>Balanço</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>cabecConsDemoResult</termo>
+	<significado>Demonstrativo de Resultados</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloConsDemoResult</termo>
+	<significado>Demonstrativo de Resultados</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>cabecConsDoar</termo>
+	<significado>Demonstrativo de Origem e Aplicação de Recursos</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloConsDoar</termo>
+	<significado>Demonstrativo de Origem e Aplicação de Recursos</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>cabecConsOrcamento</termo>
+	<significado>Acompanhamento do Orçamento</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloConsRetrospectiva</termo>
+	<significado>Relatório de Retrospectiva</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>cabecConsRetrospectiva</termo>
+	<significado>Relatório de Retrospectiva</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloConsOrcamento</termo>
+	<significado>Acompanhamento do Orçamento</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>cabecConsRazao</termo>
+	<significado>Razão Analítico</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloConsRazao</termo>
+	<significado>Razão Analítico</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>cabecRegLanc</termo>
+	<significado>Registro de Lançamentos</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloRegLanc</termo>
+	<significado>Registro de Lançamentos</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>cabecConsLancNaoCont</termo>
+	<significado>Lançamentos não Contabilizados</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloConsLancNaoCont</termo>
+	<significado>Lançamentos não Contabilizados</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>cabecLiberaLanc</termo>
+	<significado>Liberação de Lançamentos</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloLiberaLanc</termo>
+	<significado>Liberação de Lançamentos</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>cabecConsLanc</termo>
+	<significado>Consulta de Lançamentos</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloConsLanc</termo>
+	<significado>Consulta de Lançamentos</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloAlteraLanc</termo>
+	<significado>Alteração de Lançamento</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>cabecCadNota</termo>
+	<significado>Cadastro de Notas Explicativas</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloCadNota</termo>
+	<significado>Cadastro de Notas Explicativas</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>cabecZeramento</termo>
+	<significado>Parâmetros de Zeramento</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloZeramento</termo>
+	<significado>Parâmetros de Zeramento</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>cabecZeramentoContas</termo>
+	<significado>Zeramento de Contas de Resultado</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloZeramentoContas</termo>
+	<significado>Zeramento de Contas de Resultado</significado>
+	</rotulo>
+
+	<!-- Opcoes do MENU -->
+
+	<rotulo>
+	<termo>tituloMenuPrinc</termo>
+	<significado>MENU PRINCIPAL</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>opcaoMenuPrinc1</termo>
+	<significado>Administração do Sistema</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>opcaoMenuPrinc2</termo>
+	<significado>Supervisão do Sistema</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>opcaoMenuPrinc3</termo>
+	<significado>Operação do Sistema</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>opcaoMenuPrinc4</termo>
+	<significado>Alterar Senha de Usuário</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>opcaoMenuPrinc5</termo>
+	<significado>Relatórios Personalizados</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>opcaoSair</termo>
+	<significado>Sair do Contábil WEB</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>opcaoRetornarMenu</termo>
+	<significado>Retornar ao Menu Principal</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloMenuAdmin</termo>
+	<significado>MENU ADMINISTRAÇÃO DO SISTEMA</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>opcaoParametrosSistema</termo>
+	<significado>Atualizar Parâmetros do Contábil WEB</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>opcaoCadastroUsuarios</termo>
+	<significado>Cadastro de Usuários</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>opcaoVincularUsuarios</termo>
+	<significado>Vincular Usuários a Empresas</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>opcaoConsultaArquivoLOG</termo>
+	<significado>Consulta ao Arquivo de LOG</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>opcaoEditorConsultas</termo>
+	<significado>Editor de Consultas Personalizadas</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloMenuSupervisao</termo>
+	<significado>MENU SUPERVISÃO DO SISTEMA</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>opcaoCadEmpresa</termo>
+	<significado>Cadastro de Empresas</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>opcaoCadCentro</termo>
+	<significado>Cadastro de Centros de Custo</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>opcaoCadTermoAbertura</termo>
+	<significado>Cadastro de Termos de Abertura - Fechamento</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>opcaoCadPlanoConta</termo>
+	<significado>Cadastro de Plano de Contas</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>opcaoCadPlanoDoar</termo>
+	<significado>Cadastro de Plano DOAR</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>opcaoCadnual</termo>
+	<significado>Cadastro de Orçamento Anual</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>opcaoCadHistoricoPadrao</termo>
+	<significado>Cadastro de Históricos Padrões</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>opcaoLiberacao</termo>
+	<significado>Liberação - Contabilização de Lançamentos</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>opcaoRelLancNaoContab</termo>
+	<significado>Relatório de Lançamentos não Contabilizados</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>opcaoRelContabeis</termo>
+	<significado>Relatórios Contábeis</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>opcaoNotasExplicativas</termo>
+	<significado>Notas Explicativas</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>opcaoZeramento</termo>
+	<significado>Parâmetros de Zeramento</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>opcaoZeramentoContasResultado</termo>
+	<significado>Zeramento de Contas de Resultado</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>opcaoVerificacaoLanc</termo>
+	<significado>Verificação de Lançamentos Abertos</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloMenuRelCont</termo>
+	<significado>MENU RELATÓRIOS CONTÁBEIS</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>opcaoRelDiarioLancamentos</termo>
+	<significado>Diário de Lançamentos</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>opcaoRelRazaoAnalitico</termo>
+	<significado>Razão Analítico</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>opcaoRelBalanceteAnalitico</termo>
+	<significado>Balancete Analítico</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>opcaoRelBalanceteSintetico</termo>
+	<significado>Balancete Sintético</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>opcaoRelDemonstrativoResultados</termo>
+	<significado>Demonstrativo de Resultados</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>opcaoRelBalanco</termo>
+	<significado>Balanço</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>opcaoRelDoar</termo>
+	<significado>DOAR</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>opcaoRelAcompanhamentoOrcamento</termo>
+	<significado>Acompanhamento do Orçamento</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>opcaoRelRetrospectiva</termo>
+	<significado>Relatório de Retrospectiva</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>opcaoRelPlanoContas</termo>
+	<significado>Plano de Contas</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>opcaoRelPlanoContasDoar</termo>
+	<significado>Plano de Contas DOAR</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>opcaoGrafAcompanhamentoOrcamento</termo>
+	<significado>Gráfico Acompanhamento do Orçamento</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>opcaoGrafEvolucaoSaldo</termo>
+	<significado>Gráfico Evolução do Saldo</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>tituloMenuOperacao</termo>
+	<significado>MENU OPERAÇÃO DO SISTEMA</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>opcaoRegLancamento</termo>
+	<significado>Registro de Lançamentos Contábeis</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>opcaoRelLancNaoContabilizados</termo>
+	<significado>Relatório de Lançamentos não Contabilizados</significado>
+	</rotulo>
+
+	<!-- Labels e botoes de formularios -->
+
+	<rotulo>
+	<termo>campoLogin</termo>
+	<significado>Login:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoDataInicial</termo>
+	<significado>Data inicial:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoDataFinal</termo>
+	<significado>Data final:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoSenha</termo>
+	<significado>Senha:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoConfirmaSenha</termo>
+	<significado>Confirma senha:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoDescricao</termo>
+	<significado>Descrição:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoSigla</termo>
+	<significado>Sigla:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoNome</termo>
+	<significado>Nome:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoEndereco</termo>
+	<significado>Endereço:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoNumero</termo>
+	<significado>Número:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoFone</termo>
+	<significado>Fone:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoEmail</termo>
+	<significado>e-mail:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoComplemento</termo>
+	<significado>Complemento:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoBairro</termo>
+	<significado>Bairro:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoCidade</termo>
+	<significado>Cidade:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoCep</termo>
+	<significado>CEP:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoUf</termo>
+	<significado>UF:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>codigoContaCaixa</termo>
+	<significado>Código da Conta Caixa:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoSenhaAtual</termo>
+	<significado>Senha atual:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoLinha1</termo>
+	<significado>Linha 1:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoLinha2</termo>
+	<significado>Linha 2:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoLinha3</termo>
+	<significado>Linha 3:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoMaximoDiasLog</termo>
+	<significado>Máximo de dias do LOG:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoTitulo</termo>
+	<significado>Título:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoObservacoes</termo>
+	<significado>Observações:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoModuloPHP</termo>
+	<significado>Módulo PHP:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoPerfilUsuario</termo>
+	<significado>Perfil do usuário:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoInstrucaoSQL</termo>
+	<significado>Instrução SQL:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoEmpresa</termo>
+	<significado>Empresa:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoEntrar</termo>
+	<significado>Entrar</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoData</termo>
+	<significado>Data:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoNumeroIp</termo>
+	<significado>Número IP:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoNomeUsuario</termo>
+	<significado>Usuário:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoRazaoSocial</termo>
+	<significado>Razão social:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoCnpj</termo>
+	<significado>CNPJ:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoInscricaoEstadual</termo>
+	<significado>Inscrição estadual:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoInscricaoMunicipal</termo>
+	<significado>Inscrição municipal:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoNomeContador</termo>
+	<significado>Nome Contador:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoRegistroContador</termo>
+	<significado>Registro CRC:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoMascaraPlano</termo>
+	<significado>Máscara plano de contas:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoMascaraDoar</termo>
+	<significado>Máscara contas DOAR:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoTexto</termo>
+	<significado>Texto:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoLocalizacao</termo>
+	<significado>Localização:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoLocalizacaoInicio</termo>
+	<significado>Início</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoLocalizacaoFim</termo>
+	<significado>Final</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoCodigoSintetico</termo>
+	<significado>Código sintético:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoNatureza</termo>
+	<significado>Natureza:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoNaturezaDevedora</termo>
+	<significado>Devedora</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoNaturezaCredora</termo>
+	<significado>Credora</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoTipo</termo>
+	<significado>Tipo:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoTipoAnalitica</termo>
+	<significado>Analítica</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoTipoSintetica</termo>
+	<significado>Sintética</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoClassificacao</termo>
+	<significado>Classificação:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoClassificacaoOutra</termo>
+	<significado>Outra</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoClassificacaoDespesa</termo>
+	<significado>Despesa</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoClassificacaoReceita</termo>
+	<significado>Receita</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoPodeFicarCredora</termo>
+	<significado>Pode ficar credora?</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoPodeFicarDevedora</termo>
+	<significado>Pode ficar devedora?</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoPodeCredoraSim</termo>
+	<significado>Sim</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoPodeCredoraNao</termo>
+	<significado>Não</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoPodeDevedoraSim</termo>
+	<significado>Sim</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoPodeDevedoraNao</termo>
+	<significado>Não</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoPodeCredoraSim</termo>
+	<significado>Sim</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoContaDoar</termo>
+	<significado>Conta DOAR:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoHistorico</termo>
+	<significado>Histórico:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoAno</termo>
+	<significado>Ano:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoValorOrcado</termo>
+	<significado>Valor orçado R$:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoMes</termo>
+	<significado>Mês:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoAno</termo>
+	<significado>Ano:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoCodigoLancamento</termo>
+	<significado>Código lançamento:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoFormula</termo>
+	<significado>Fórmula Contábil:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoFormula1</termo>
+	<significado>1a. Fórmula (1D/1C)</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoFormula2</termo>
+	<significado>2a. Fórmula (1D/+C)</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoFormula3</termo>
+	<significado>3a. Fórmula (+D/1C)</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoValor</termo>
+	<significado>Valor:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoDataLanc</termo>
+	<significado>Data do lançamento:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoOperacao</termo>
+	<significado>Operação:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoCaixa</termo>
+	<significado>Contra-partida é Caixa ?</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoOperacaoDebito</termo>
+	<significado>Débito</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoOperacaoCredito</termo>
+	<significado>Crédito</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoTotal</termo>
+	<significado>Total:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoChaveAcesso</termo>
+	<significado>Chave de acesso:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoNotaExplicativa</termo>
+	<significado>Nota Explicativa:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoResponsavel</termo>
+	<significado>Responsável pela empresa:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoCpfResponsavel</termo>
+	<significado>CPF Responsável:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoJan</termo>
+	<significado>Jan</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoFev</termo>
+	<significado>Fev</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoMar</termo>
+	<significado>Mar</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoAbr</termo>
+	<significado>Abr</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoMai</termo>
+	<significado>Mai</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoJun</termo>
+	<significado>Jun</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoJul</termo>
+	<significado>Jul</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoAgo</termo>
+	<significado>Ago</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoSet</termo>
+	<significado>Set</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoOut</termo>
+	<significado>Out</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoNov</termo>
+	<significado>Nov</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoDez</termo>
+	<significado>Dez</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoContaDestino</termo>
+	<significado>Conta destino:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoGrupo01</termo>
+	<significado>Grupo/Conta 01:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoGrupo02</termo>
+	<significado>Grupo/Conta 02:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoGrupo03</termo>
+	<significado>Grupo/Conta 03:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoGrupo04</termo>
+	<significado>Grupo/Conta 04:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoGrupo05</termo>
+	<significado>Grupo/Conta 05:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoCodigoConta</termo>
+	<significado>Código da conta:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoDataInicialLancamento</termo>
+	<significado>Data inicial p/ lançamentos:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoDataFinalLancamento</termo>
+	<significado>Data final p/ lançamentos:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoOperacaoDB</termo>
+	<significado>Operação:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoPaginaInicial</termo>
+	<significado>Página inicial:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoNivelMaximoExibir</termo>
+	<significado>Nível máximo a exibir:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoNivel1</termo>
+	<significado>1o. Nível</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoNivel2</termo>
+	<significado>2o. Nível</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoNivel3</termo>
+	<significado>3o. Nível</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoNivel4</termo>
+	<significado>4o. Nível</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoNivel5</termo>
+	<significado>5o. Nível</significado>
+	</rotulo>
+	
+	<rotulo>
+	<termo>campoDataLimite</termo>
+	<significado>Data limite:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoHistoricoDestino</termo>
+	<significado>Histórico da conta de destino:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoCodigo</termo>
+	<significado>Código:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoMesInicial</termo>
+	<significado>Mês inicial:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoMesFinal</termo>
+	<significado>Mês final:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoContraPartida</termo>
+	<significado>Contra-partida automática:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoCentroCusto</termo>
+	<significado>Centro de Custo:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoTodosCentros</termo>
+	<significado>Todos Centros de Custo</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoArquivoAnexado</termo>
+	<significado>Arquivo Anexado:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>botaoConsultarHistorico</termo>
+	<significado>Consultar histórico...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>botaoImprimirSlip</termo>
+	<significado>Imprimir Slip</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>botaoAdicionar</termo>
+	<significado>Adicionar</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>botaoRemover</termo>
+	<significado>Remover</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>botaoRemoverTodosLanc</termo>
+	<significado>Remover todos lançamentos</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>botaoAjuda</termo>
+	<significado>Ajuda</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>botaoEntrar</termo>
+	<significado>Entrar</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>botaoAjudaJanela</termo>
+	<significado> ? </significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>botaoFechaJanela</termo>
+	<significado> X </significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>botaoIncluir</termo>
+	<significado>Incluir</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>botaoProximo</termo>
+	<significado>Próximo</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>botaoAnterior</termo>
+	<significado>Anterior</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>botaoAlterar</termo>
+	<significado>Alterar</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>botaoExcluir</termo>
+	<significado>Excluir</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>botaoConsultar</termo>
+	<significado>Consultar</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>botaoVoltar</termo>
+	<significado>Voltar</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>botaoImprimir</termo>
+	<significado>Imprimir</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>botaoPreview</termo>
+	<significado>Preview</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>botaoExecutar</termo>
+	<significado>Executar</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>botaoCalendario</termo>
+	<significado>Calendário...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>botaoGerarPDF</termo>
+	<significado>Gerar PDF</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>botaoVisualizarPDF</termo>
+	<significado>Visualizar PDF</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>botaoExcluirSelec</termo>
+	<significado>Excluir selecionadas</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>botaoLiberarSelec</termo>
+	<significado>Liberar selecionadas</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>botaoExecutarZeramento</termo>
+	<significado>Executar zeramento</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>botaoContinuar</termo>
+	<significado>Continuar >></significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>botaoConsultarItens</termo>
+	<significado>Consultar Itens</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioDataHora</termo>
+	<significado>Data/Hora</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioDescricao</termo>
+	<significado>Descrição</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioNome</termo>
+	<significado>Nome</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioEndereco</termo>
+	<significado>Endereço</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioFone</termo>
+	<significado>Fone</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioEmail</termo>
+	<significado>e-mail</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>campoTextoPagina</termo>
+	<significado>Página:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioObservacoes</termo>
+	<significado>Observações</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioComplemento</termo>
+	<significado>Complemento</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioOperacao</termo>
+	<significado>Operações (Alt/Exc)</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioData</termo>
+	<significado>Data</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioAlteracao</termo>
+	<significado>Alterar</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioNumeroOrdem</termo>
+	<significado>Nº Ordem</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioNumeroIp</termo>
+	<significado>Número IP</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioLoginUsuario</termo>
+	<significado>Login Usuário</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioConta</termo>
+	<significado>Conta</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioDiario</termo>
+	<significado>Diário de Lançamentos</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioHistorico</termo>
+	<significado>Histórico</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioDebito</termo>
+	<significado>Débito</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioCredito</termo>
+	<significado>Crédito</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioCentroCusto</termo>
+	<significado>Centro de Custo</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioTotais</termo>
+	<significado>Totais</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioBalanceteAnalitico</termo>
+	<significado>Balancete Analítico</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioSaldoAnterior</termo>
+	<significado>Saldo Anterior</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioSaldoAtual</termo>
+	<significado>Saldo Atual</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioBalanceteSintetico</termo>
+	<significado>Balancete Sintético</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioPlanoContas</termo>
+	<significado>Plano de Contas</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioPlanoContasDoar</termo>
+	<significado>Plano de Contas DOAR</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioAnaliticaSintetica</termo>
+	<significado>Analítica - Sintética</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioDebitoCredito</termo>
+	<significado>Débito - Crédito</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioSaldo</termo>
+	<significado>Saldo</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioBalanco</termo>
+	<significado>Balanço</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioDemoResult</termo>
+	<significado>Demonstrativo de Resultados</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioDoar</termo>
+	<significado>Demonstrativo de Origem e Aplicação de Recursos</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioSaldoFinal</termo>
+	<significado>Saldo Final</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioOrcamento</termo>
+	<significado>Acompanhamento do Orçamento</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioPrevistoAno</termo>
+	<significado>Previsto no Ano</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioPrevistoMes</termo>
+	<significado>Previsto no Periodo</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioExecutadoMes</termo>
+	<significado>Executado do Periodo</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioPercentual</termo>
+	<significado>%</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioRazao</termo>
+	<significado>Razão Analítico</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioHistorico</termo>
+	<significado>Histórico</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioLancamento</termo>
+	<significado>Lançamento</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioCodigoAcesso</termo>
+	<significado>Código Acesso</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioClassificacao</termo>
+	<significado>Classificação</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioPodeCredora</termo>
+	<significado>Credora?</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioNatureza</termo>
+	<significado>Natureza</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioPodeDevedora</termo>
+	<significado>Devedora?</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioCodigo</termo>
+	<significado>Código</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioLancNaoCont</termo>
+	<significado>Lançamentos não Contabilizados</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioValor</termo>
+	<significado>Valor</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioOperacaoDC</termo>
+	<significado>Operação</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioLiberaLanc</termo>
+	<significado>Liberação de Lançamentos não Contabilizados</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioLiberaLanc</termo>
+	<significado>Liberação de Lançamentos não Contabilizados</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioLiberacao</termo>
+	<significado>Liberação</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioSelecionado</termo>
+	<significado>Selecionado</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioConsLanc</termo>
+	<significado>Consulta de Lançamentos</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioImprimirSlip</termo>
+	<significado>Slip No.</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioImprimirSlipTexto</termo>
+	<significado>Impressão do Slip</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioExcluirLancamento</termo>
+	<significado>Exclusão de Lançamentos</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioCodigoSintetico</termo>
+	<significado>Código Sintético</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioCodigo</termo>
+	<significado>Código</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioVerificacaoLanc</termo>
+	<significado>Lançamentos Abertos</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioEmpresa</termo>
+	<significado>Empresa</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioUsuario</termo>
+	<significado>Usuário</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioOperacao</termo>
+	<significado>Operação</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioDiferenca</termo>
+	<significado>Diferença</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioItensLancamento</termo>
+	<significado>Itens de Lançamento</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>relatorioRetrospectiva</termo>
+	<significado>Relatório de Retrospectiva</significado>
+	</rotulo>
+
+	<!-- Mensagens exibidas na aplicacao -->
+
+	<rotulo>
+	<termo>msgCliqueAqui</termo>
+	<significado>clique aqui</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgCliqueAquiParaVisualizar</termo>
+	<significado>Clique aqui para visualizar...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgCliqueAquiParaVisualizarTXT</termo>
+	<significado>Clique aqui para visualizar o relatório TXT</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgDocumentoNaoDisponivel</termo>
+	<significado>Documento não disponível...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgUsuarioNaoAutorizado</termo>
+	<significado>Usuário não autorizado para acesso ao Contábil WEB...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLogout</termo>
+	<significado>Sessão finalizada com sucesso</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgErroSession</termo>
+	<significado>FALHA NA SESSÃO. Por questões de segurança é necessário efetuar o Login novamente...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgAtualizaParametroOk</termo>
+	<significado>Parâmetros atualizados com sucesso!!</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgAtualizaParametro</termo>
+	<significado>Não foi possível atualizar os parâmetros do sistema...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgIncluiConsultaOk</termo>
+	<significado>Consulta incluída com sucesso!!</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgIncluiConsulta</termo>
+	<significado>Não foi possível incluir consulta...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgAlteraSenhaOk</termo>
+	<significado>Senha atualizada com sucesso!!</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgAlteraSenha</termo>
+	<significado>Não foi possível senha do usuário...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgIncluiUsuarioOk</termo>
+	<significado>Usuário incluído com sucesso!!</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgIncluiUsuario</termo>
+	<significado>Não foi possível incluir usuário...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgAlteraUsuarioOk</termo>
+	<significado>Usuário alterado com sucesso!!</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgAlteraUsuario</termo>
+	<significado>Não foi possível alterar usuário...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgExcluiUsuarioOk</termo>
+	<significado>Usuário excluído com sucesso!!</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgExcluiUsuario</termo>
+	<significado>Não foi possível excluir usuário...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLogAtualizaParametro</termo>
+	<significado>Parâmetros do Sistema alterados</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLogIncluiConsulta</termo>
+	<significado>Incluiu consulta</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLogIncluiUsuario</termo>
+	<significado>Incluiu usuário</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgJaExisteUsuarioLogin</termo>
+	<significado>Já existe usuário cadastrado com este login...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLogAlteraUsuario</termo>
+	<significado>Alterou usuário</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgUsuariosNaoEncontrados</termo>
+	<significado>Usuários não encontrados...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLogExcluiUsuario</termo>
+	<significado>Excluiu usuário</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgConsultaNaoExistenteParaPerfil</termo>
+	<significado>Consultas não existentes para o perfil...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLogAlteraSenha</termo>
+	<significado>Alterou senha de usuario</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgModuloNaoImp</termo>
+	<significado>Módulo não implementado...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgIncluiEmpresaOk</termo>
+	<significado>Empresa incluída com sucesso!!</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgIncluiEmpresa</termo>
+	<significado>Não foi possível incluir empresa...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgAlteraEmpresaOk</termo>
+	<significado>Empresa alterada com sucesso!!</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgAlteraEmpresa</termo>
+	<significado>Não foi possível alterar empresa...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgExcluiEmpresaOk</termo>
+	<significado>Empresa excluída com sucesso!!</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgExcluiEmpresa</termo>
+	<significado>Não foi possível excluir empresa...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLogIncluiEmpresa</termo>
+	<significado>Incluiu empresa</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLogAlteraEmpresa</termo>
+	<significado>Alterou empresa</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgEmpresasNaoEncontradas</termo>
+	<significado>Empresas não encontradas...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLogExcluiEmpresa</termo>
+	<significado>Excluiu empresa</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgIncluiTermoOk</termo>
+	<significado>Termo incluído com sucesso!!</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgIncluiTermo</termo>
+	<significado>Não foi possível incluir termo...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgAlteraTermoOk</termo>
+	<significado>Termo alterado com sucesso!!</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgAlteraTermo</termo>
+	<significado>Não foi possível alterar termo...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgExcluiTermoOk</termo>
+	<significado>Termo excluído com sucesso!!</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgExcluiTermo</termo>
+	<significado>Não foi possível excluir termo...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLogIncluiTermo</termo>
+	<significado>Incluiu termo</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLogAlteraTermo</termo>
+	<significado>Alterou termo</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgTermosNaoEncontrados</termo>
+	<significado>Termos não encontrados...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLogExcluiTermo</termo>
+	<significado>Excluiu termo</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgExemploCodigoSintetico</termo>
+	<significado>Exemplo:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgIncluiPlanoOk</termo>
+	<significado>Conta contábil incluída com sucesso!!</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgIncluiPlano</termo>
+	<significado>Não foi possível incluir conta contábil...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgAlteraPlanoOk</termo>
+	<significado>Conta contábil alterada com sucesso!!</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgAlteraPlano</termo>
+	<significado>Não foi possível alterar conta contábil...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgExcluiPlanoOk</termo>
+	<significado>Conta contábil excluída com sucesso!!</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgExcluiPlano</termo>
+	<significado>Não foi possível excluir conta contábil...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLogIncluiPlano</termo>
+	<significado>Incluiu plano</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLogAlteraPlano</termo>
+	<significado>Alterou plano</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgPlanoNaoEncontrados</termo>
+	<significado>Plano de contas não encontrado...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLogExcluiPlano</termo>
+	<significado>Excluiu plano</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgNenhuma</termo>
+	<significado>Nenhuma</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgNenhum</termo>
+	<significado>Nenhum</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgIncluiDoarOk</termo>
+	<significado>Conta DOAR incluída com sucesso!!</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgIncluiDoar</termo>
+	<significado>Não foi possível incluir conta DOAR...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgAlteraDoarOk</termo>
+	<significado>Conta DOAR alterada com sucesso!!</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgAlteraDoar</termo>
+	<significado>Não foi possível alterar conta DOAR...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgExcluiDoarOk</termo>
+	<significado>Conta DOAR excluída com sucesso!!</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgExcluiDoar</termo>
+	<significado>Não foi possível excluir conta DOAR...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLogIncluiDoar</termo>
+	<significado>Incluiu doar</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLogAlteraDoar</termo>
+	<significado>Alterou doar</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgDoarNaoEncontrados</termo>
+	<significado>Contas DOAR não encontradas...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLogExcluiDoar</termo>
+	<significado>Excluiu doar</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgIncluiHistoricoOk</termo>
+	<significado>Histórico padrão incluído com sucesso!!</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgIncluiHistorico</termo>
+	<significado>Não foi possível incluir histórico padrão...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgAlteraHistoricoOk</termo>
+	<significado>Histórico padrão alterado com sucesso!!</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgAlteraHistorico</termo>
+	<significado>Não foi possível alterar histórico padrão...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgExcluiHistoricoOk</termo>
+	<significado>Histórico padrão excluído com sucesso!!</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgExcluiHistorico</termo>
+	<significado>Não foi possível excluir histórico padrão...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLogIncluiHistorico</termo>
+	<significado>Incluiu historico</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLogAlteraHistorico</termo>
+	<significado>Alterou historico</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgHistoricosNaoEncontrados</termo>
+	<significado>Históricos padrões não encontrados...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLogExcluiHistorico</termo>
+	<significado>Excluiu historico</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgIncluiOrcamentoOk</termo>
+	<significado>Orçamento anual da conta incluído com sucesso!!</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgIncluiOrcamento</termo>
+	<significado>Não foi possível incluir orçamento anual da conta...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgAlteraOrcamentoOk</termo>
+	<significado>Orçamento anual da conta alterado com sucesso!!</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgAlteraOrcamento</termo>
+	<significado>Não foi possível alterar orçamento anual da conta...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgExcluiOrcamentoOk</termo>
+	<significado>Orçamento anual da conta excluído com sucesso!!</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgExcluiOrcamento</termo>
+	<significado>Não foi possível excluir orçamento anual da conta...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLogIncluiOrcamento</termo>
+	<significado>Incluiu orçamento</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLogAlteraOrcamento</termo>
+	<significado>Alterou orçamento</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgOrcamentosNaoEncontrados</termo>
+	<significado>Orçamentos anuais não encontrados...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLogExcluiOrcamento</termo>
+	<significado>Excluiu orçamento</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgExibeContador</termo>
+	<significado>Exibe dados do contador ao final relatório</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgBalanco</termo>
+	<significado>Encerra o presente balanco, tanto ATIVO como PASSIVO a quantia supra de R$</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgDemoResult</termo>
+	<significado>Resultado Operacional no Período</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgDemoResultPrejuizo</termo>
+	<significado>Prejuízo</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgDemoResultLucro</termo>
+	<significado>Lucro</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgComposicaoLanc</termo>
+	<significado>Composição do Lançamento</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgCabecComposicao</termo>
+	<significado>[Conta]|[Descrição Conta]---------------------------------|[Op]|--[Valor R$]--</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLiberaLancOk</termo>
+	<significado>Lançamento(s) liberado(s) com sucesso!!</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLiberaLanc</termo>
+	<significado>Não foi possível liberar lançamento(s)...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgExcluiLancamentoOk</termo>
+	<significado>Lançamento excluído com sucesso!!</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgExcluiLancamento</termo>
+	<significado>Não foi possível excluir lançamento...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgImgLiberaLanc</termo>
+	<significado>Libera lançamento</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgImgExcluiLanc</termo>
+	<significado>Exclui lançamento</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLogExcluiLancamento</termo>
+	<significado>Excluiu lançamento</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLogLiberaLanc</termo>
+	<significado>Liberou lançamento</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgIncluiLancamentoOk</termo>
+	<significado>Lançamento incluído com sucesso!!</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgIncluiLancamento</termo>
+	<significado>Não foi possível incluir lançamento...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLogIncluiLancamento</termo>
+	<significado>Incluiu lançamento</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgPerfilAdministrador</termo>
+	<significado>Administrador</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgPerfilSupervisor</termo>
+	<significado>Supervisor</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgPerfilOperador</termo>
+	<significado>Operador</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgPerfilConsulta</termo>
+	<significado>Somente consulta</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgTodosUsuarios</termo>
+	<significado>Todos os usuários</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgConsultaInvalida</termo>
+	<significado>Não foi encontrado nenhum registro para os critérios especificados...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgIncluiNotaOk</termo>
+	<significado>Nota explicativa incluída com sucesso!!</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgIncluiNota</termo>
+	<significado>Não foi possível incluir nota explicativa...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgAlteraNotaOk</termo>
+	<significado>Nota explicativa alterada com sucesso!!</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgAlteraNota</termo>
+	<significado>Não foi possível alterar nota explicativa...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgExcluiNotaOk</termo>
+	<significado>Nota explicativa excluída com sucesso!!</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgExcluiNota</termo>
+	<significado>Não foi possível excluir nota explicativa...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLogIncluiNota</termo>
+	<significado>Incluiu nota explicativa</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLogAlteraNota</termo>
+	<significado>Alterou nota explicativa</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgNotasExplicativasNaoEncontradas</termo>
+	<significado>Notas explicativas não encontradas...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLogExcluiNota</termo>
+	<significado>Excluiu nota explicativa</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgValorOrcadoMensal</termo>
+	<significado>Valores orçados por mês:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgContasZeradas</termo>
+	<significado>Grupos/Contas que deverão ser zeradas:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgIncluiZeramentoOk</termo>
+	<significado>Parâmetros de zeramento incluídos com sucesso!!</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgIncluiZeramento</termo>
+	<significado>Não foi possível incluir parâmetros de zeramento...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgAlteraZeramentoOk</termo>
+	<significado>Parâmetros de zeramento alterados com sucesso!!</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgAlteraZeramento</termo>
+	<significado>Não foi possível alterar parâmetros de zeramento...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgExcluiZeramentoOk</termo>
+	<significado>Parâmetros de zeramento excluídos com sucesso!!</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgExcluiZeramento</termo>
+	<significado>Não foi possível excluir parâmetros de zeramento...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLogIncluiZeramento</termo>
+	<significado>Incluiu zeramento</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLogAlteraZeramento</termo>
+	<significado>Alterou zeramento</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgZeramentosNaoEncontrados</termo>
+	<significado>Parâmetros de zeramento não encontrados...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgJaExisteDoarCodigo</termo>
+	<significado>Já existe conta DOAR com este código...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgJaExisteContaCodigo</termo>
+	<significado>Já existe conta com este código...</significado>
+	</rotulo>
+	
+	<rotulo>
+	<termo>msgJaExisteOrcamentoContaAno</termo>
+	<significado>Já existe previsão orçamentária para esta conta no ano especificado...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgJaExisteZeramentoEmpresaConta</termo>
+	<significado>Já existe parâmetro de zeramento para esta empresa e conta destino...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLancamentoEmAberto</termo>
+	<significado>Este lançamento está em aberto (Total de débitos diferente do total de créditos)...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLancamentoJaContabilizadoPeloSupervisor</termo>
+	<significado>Lançamento já aprovado pelo supervisor. Impossível excluí-lo...</significado>
+	</rotulo>
+	
+	<rotulo>
+	<termo>msgLancamentoNaoEncontrado</termo>
+	<significado>Lançamento não encontrado...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLancamentoJaFechado</termo>
+	<significado>Lançamento já fechado (total de débitos igual ao total de créditos)...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgItemLancamentoNaoEncontrados</termo>
+	<significado>Itens de lançamentos não encontrados...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgAlteraLancamentoOk</termo>
+	<significado>Lançamento alterado com sucesso!!</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgAlteraLancamento</termo>
+	<significado>Não foi possível alterar lançamento...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLogAlteraLancamento</termo>
+	<significado>Alterou lancamento</significado>
+	</rotulo>
+	
+	<rotulo>
+	<termo>msgConsultaInvalida</termo>
+	<significado>Não foram encontrados dados baseados no critério informado...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgNaoFoiPossivelExecutarConsulta</termo>
+	<significado>Não foi possível executar consulta.Sua instrução SQL está errada...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgNaoInformarNovoLancamento</termo>
+	<significado>Não informar código se for incluir para novo lançamento</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgCodigoLancamento</termo>
+	<significado>Código do Lançamento:</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgCliqueAquiVisualizarSlip</termo>
+	<significado>Clique aqui para visualizar o Slip</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgExibeNaoLiberados</termo>
+	<significado>Listar também os lançamentos não liberados pelo contador</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgExibeIncluirNaoLiberados</termo>
+	<significado>Incluir também os lançamentos não liberados pelo contador</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLancamentosNaoLiberados</termo>
+	<significado>* Lançamentos não liberados pelo contador até o momento</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgConsLancamentosNaoLiberados</termo>
+	<significado>* Considerando os lançamentos não liberados pelo contador até o momento</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgContasResultadoSaldo</termo>
+	<significado>Existem contas de resultado com saldo. Impossível consultar balanço...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgAvisoExcedeuPrevistoOrcamento</termo>
+	<significado>AVISO: A Conta informada excedeu o previsto no orçamento...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgErroContaCredora</termo>
+	<significado>ERRO: O lançamento tornaria a conta credora.</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgErroContaDevedora</termo>
+	<significado>ERRO: O lançamento tornaria a conta devedora.</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgZeramentoContasOk</termo>
+	<significado>Zeramento de contas de resultado executado com sucesso!!</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgZeramentoContas</termo>
+	<significado>Não foi possível executar zeramento de contas de resultado...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLogZeramentoContas</termo>
+	<significado>Executou zeramento</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgNaoExistemConsultasPerfil</termo>
+	<significado>Não existem consultas personalizadas para este perfil...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgPeriodoInvalido</termo>
+	<significado>Periodo informado invalido...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgVerificacaoLanc</termo>
+	<significado>O Contábil WEB irá exibir um relatório dos lançamentos que estão em aberto da contabilidade</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgConsultaInvalidaVerificacaoLanc</termo>
+	<significado>Não foram encontrados lançamentos em aberto na contabilidade...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgDesconsiderarZeramentos</termo>
+	<significado>Desconsiderar zeramentos</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgIncluiUsuarioEmpresaOk</termo>
+	<significado>Vínculo de Usuário a Empresa incluído com sucesso!!</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgIncluiUsuarioEmpresa</termo>
+	<significado>Não foi possível incluir vínculo de Usuário a Empresa...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgExcluiUsuarioEmpresaOk</termo>
+	<significado>Vínculo de Usuário a Empresa excluído com sucesso!!</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgExcluiUsuarioEmpresa</termo>
+	<significado>Não foi possível excluir vínculo de Usuário a Empresa...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLogIncluiUsuarioEmpresa</termo>
+	<significado>Incluiu Vínculo de Usuário a Empresa</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLogExcluiUsuarioEmpresa</termo>
+	<significado>Excluiu vínculo de Usuário a Empresa</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgIncluiCentroOk</termo>
+	<significado>Centro de Custo incluído com sucesso!!</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgIncluiCentro</termo>
+	<significado>Não foi possível incluir Centro de Custo...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgAlteraCentroOk</termo>
+	<significado>Centro de Custo alterado com sucesso!!</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgAlteraCentro</termo>
+	<significado>Não foi possível alterar Centro de Custo...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgExcluiCentroOk</termo>
+	<significado>Centro de Custo excluído com sucesso!!</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgExcluiCentro</termo>
+	<significado>Não foi possível excluir Centro de Custo...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLogIncluiCentro</termo>
+	<significado>Incluiu Centro de Custo</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLogAlteraCentro</termo>
+	<significado>Alterou Centro de Custo</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgCentrosNaoEncontrados</termo>
+	<significado>Centros de Custo não encontrados...</significado>
+	</rotulo>
+
+	<rotulo>
+	<termo>msgLogExcluiCentro</termo>
+	<significado>Excluiu Centro de Custo</significado>
+	</rotulo>
+
+</i18n>
+
+<!--
+	Help On-Line e Documentacao Tecnica
+	ajuda		  - contem todos os modulos de ajuda
+	modulo		  - modulo do sistema
+	titulo		  - titulo do modulo
+	palavra_chave - termo usado para pesquisa de modulo
+	texto		  - texto de ajuda
+	proximo_link  - proximo link a ser chamado
+	anterior_link - link anterior a ser chamado
+-->
+<ajuda>
+
+  <modulo>
+
+	<titulo>Acesso ao Sistema</titulo>
+	<palavra_chave>cwLogin</palavra_chave>
+	<texto>Para acesso ao Contábil WEB, é necessário o preenchimento do login e senha.
+	Caso você não seja um usuário registrado, entre em contato com a administração do Sistema.
+	</texto>
+  </modulo>
+
+  <modulo>
+	<titulo>Menu Principal</titulo>
+	<palavra_chave>cwMenu</palavra_chave>
+	<texto>Para acessar uma opção, é necessário clicar na opção em destaque. Para sair, clique
+	em Sair do Contábil WEB.
+	</texto>
+  </modulo>
+
+  <modulo>
+	<titulo>Menu Administração do Sistema</titulo>
+	<palavra_chave>cwMenuAdmin</palavra_chave>
+	<texto>Este menu permite criação de novos usuários, atualização de parâmetros do sistema bem controlar os acessos dos usuários.
+	</texto>
+  </modulo>
+
+  <modulo>
+	<titulo>Menu Supervisão do Sistema</titulo>
+	<palavra_chave>cwMenuSupervisao</palavra_chave>
+	<texto>Este menu permite o gerenciamento e controle contábil sobre os lançamentos realizados.
+	</texto>
+  </modulo>
+
+  <modulo>
+	<titulo>Menu Operação do Sistema</titulo>
+	<palavra_chave>cwMenuOperacao</palavra_chave>
+	<texto>Este menu permite registro de lançamentos contábeis e emissão de relatórios.
+	</texto>
+  </modulo>
+
+  <modulo>
+	<titulo>Menu Relatórios Contábeis</titulo>
+	<palavra_chave>cwMenuRelCont</palavra_chave>
+	<texto>Este menu permite emissão dos diversos relatórios contábeis.
+	</texto>
+  </modulo>
+
+  <modulo>
+	<titulo>Alteração de Senha de Usuário</titulo>
+	<palavra_chave>cwAltSenha</palavra_chave>
+	<texto>Este opção permite que o usuário altere sua senha de acesso ao sistema.
+	</texto>
+  </modulo>
+
+  <modulo>
+	<titulo>Alteração de Parâmetros</titulo>
+	<palavra_chave>cwParametro</palavra_chave>
+	<texto>Este opção permite alterar os parâmetros do sistema, utilizados para relatórios.
+	</texto>
+  </modulo>
+
+  <modulo>
+	<titulo>Relatórios Personalizados</titulo>
+	<palavra_chave>cwRelatPers</palavra_chave>
+	<texto>Este opção executar relatórios personalizados, definidos por perfil de usuário.
+	</texto>
+  </modulo>
+
+  <modulo>
+	<titulo>Consulta ao LOG do Sistema</titulo>
+	<palavra_chave>cwConsLog</palavra_chave>
+	<texto>Este opção consultar o LOG de transações do sistema de contabilidade.
+	</texto>
+  </modulo>
+
+  <modulo>
+	<titulo>Editor de Consultas</titulo>
+	<palavra_chave>cwEdCons</palavra_chave>
+	<texto>Este opção criar consultas personalizadas por perfil de usuário.
+	</texto>
+  </modulo>
+
+  <modulo>
+	<titulo>Cadastro de Usuários</titulo>
+	<palavra_chave>cwCadUsuario</palavra_chave>
+	<texto>Esta opção permite cadastrar os usuários que utilizarão o sistema, definindo seu login e senha.
+	</texto>
+  </modulo>
+
+  <modulo>
+	<titulo>Cadastro de Empresas</titulo>
+	<palavra_chave>cwCadEmpresa</palavra_chave>
+	<texto>Esta opção permite cadastrar empresas nas quais serão registrados lançamentos contábeis.
+	</texto>
+  </modulo>
+
+  <modulo>
+	<titulo>Cadastro de Termos de Abertura e Encerramento</titulo>
+	<palavra_chave>cwCadEmpresa</palavra_chave>
+	<texto>Esta opção permite cadastrar termos de abertura e encerramento que podem ser utilizados nos livros contábeis.
+	</texto>
+  </modulo>
+
+  <modulo>
+	<titulo>Cadastro de Plano de Contas</titulo>
+	<palavra_chave>cwCadPlano</palavra_chave>
+	<texto>Esta opção permite cadastrar plano de contas das empresas cadastradas, com máscara de código sintético variável por empresa.
+	</texto>
+  </modulo>
+
+  <modulo>
+	<titulo>Cadastro de Contas DOAR</titulo>
+	<palavra_chave>cwCadDoar</palavra_chave>
+	<texto>Esta opção permite cadastrar contas DOAR das empresas cadastradas, com máscara de código sintético variável por empresa.
+	</texto>
+  </modulo>
+
+  <modulo>
+	<titulo>Cadastro de Históricos Padrões</titulo>
+	<palavra_chave>cwCadHistorico</palavra_chave>
+	<texto>Esta opção permite cadastrar históricos padrões específicos por empresa.
+	</texto>
+  </modulo>
+
+  <modulo>
+	<titulo>Cadastro de Orçamento Anual</titulo>
+	<palavra_chave>cwCadOrcamento</palavra_chave>
+	<texto>Esta opção permite cadastrar o orçamento anual para conta sintética específica de uma determinada empresa.
+	</texto>
+  </modulo>
+
+  <modulo>
+	<titulo>Diário de Lançamentos</titulo>
+	<palavra_chave>cwConsDiario</palavra_chave>
+	<texto>Esta opção permite a emissão do diário de lançamentos de uma determinada empresa, em diferentes formatos (HTML, PDF).
+	</texto>
+  </modulo>
+
+  <modulo>
+	<titulo>Balancete Analítico</titulo>
+	<palavra_chave>cwConsAnalitico</palavra_chave>
+	<texto>Esta opção permite a emissão do balancete analítico de uma determinada empresa, em diferentes formatos (HTML, PDF).
+	</texto>
+  </modulo>
+
+  <modulo>
+	<titulo>Balancete Sintético</titulo>
+	<palavra_chave>cwConsSintetico</palavra_chave>
+	<texto>Esta opção permite a emissão do balancete sintético de uma determinada empresa, em diferentes formatos (HTML, PDF).
+	</texto>
+  </modulo>
+
+  <modulo>
+	<titulo>Plano de Contas</titulo>
+	<palavra_chave>cwConsPlano</palavra_chave>
+	<texto>Esta opção permite a listagem do plano de contas de uma determinada empresa, em diferentes formatos (HTML, PDF).
+	</texto>
+  </modulo>
+
+  <modulo>
+	<titulo>Plano de Contas DOAR</titulo>
+	<palavra_chave>cwConsPlanoDoar</palavra_chave>
+	<texto>Esta opção permite a listagem do plano de contas DOAR de uma determinada empresa, em diferentes formatos (HTML, PDF).
+	</texto>
+  </modulo>
+
+  <modulo>
+	<titulo>Balanço</titulo>
+	<palavra_chave>cwConsBalanco</palavra_chave>
+	<texto>Esta opção permite a listagem do balanço de uma determinada empresa, em diferentes formatos (HTML, PDF).
+	</texto>
+  </modulo>
+
+  <modulo>
+	<titulo>Demonstrativo de Resultados</titulo>
+	<palavra_chave>cwConsDemoResult</palavra_chave>
+	<texto>Esta opção permite a listagem do demonstrativo de resultados de uma determinada empresa, em diferentes formatos (HTML, PDF).
+	</texto>
+  </modulo>
+
+  <modulo>
+	<titulo>Demonstrativo de Origem e Aplicação de Recursos</titulo>
+	<palavra_chave>cwConsDoar</palavra_chave>
+	<texto>Esta opção permite a listagem do demonstrativo de origem e aplicação de recursos de uma determinada empresa, em diferentes formatos (HTML, PDF).
+	</texto>
+  </modulo>
+
+  <modulo>
+	<titulo>Acompanhamento do Orçamento</titulo>
+	<palavra_chave>cwConsOrcamento</palavra_chave>
+	<texto>Esta opção permite a listagem do acompanhamento do orçamento de uma determinada empresa, em diferentes formatos (HTML, PDF).
+	</texto>
+  </modulo>
+
+  <modulo>
+	<titulo>Razão Analítico</titulo>
+	<palavra_chave>cwConsRazao</palavra_chave>
+	<texto>Esta opção permite a listagem do razão analítico de uma determinada empresa, em diferentes formatos (HTML, PDF).
+	</texto>
+  </modulo>
+
+  <modulo>
+	<titulo>Registro de Lançamentos</titulo>
+	<palavra_chave>cwRegLanc</palavra_chave>
+	<texto>Esta opção permite o incluir, alterar ou excluir lançamentos contábeis. Nesta opção, também é permitida a impressão do slip.
+	</texto>
+  </modulo>
+
+  <modulo>
+	<titulo>Lançamentos não Contabilizados</titulo>
+	<palavra_chave>cwConsLancNaoCont</palavra_chave>
+	<texto>Esta opção permite os lançamentos não contabilizados (não aprovados) pelo contador.
+	</texto>
+  </modulo>
+
+  <modulo>
+	<titulo>Liberação de Lançamentos</titulo>
+	<palavra_chave>cwLiberaLanc</palavra_chave>
+	<texto>Esta opção permite a liberação de lançamentos não contabilizados.
+	</texto>
+  </modulo>
+
+  <modulo>
+	<titulo>Notas Explicativas</titulo>
+	<palavra_chave>cwCadNota</palavra_chave>
+	<texto>Esta opção permite o cadastro de notas explicativas.
+	</texto>
+  </modulo>
+
+  <modulo>
+	<titulo>Parâmetros de Zeramento</titulo>
+	<palavra_chave>cwZeramento</palavra_chave>
+	<texto>Esta opção permite parametrizar o zeramento de contas por empresa.
+	</texto>
+  </modulo>
+
+  <modulo>
+	<titulo>Zeramento de Contas de Resultado</titulo>
+	<palavra_chave>cwZeramentoContas</palavra_chave>
+	<texto>Esta opção permite realizar o zeramento das contas de resultado, indicando as contas destino de uma dada empresa.
+	</texto>
+  </modulo>
+
+  <modulo>
+	<titulo>Cadastro de Centros de Custo</titulo>
+	<palavra_chave>cwCadCentro</palavra_chave>
+	<texto>Esta opção permite cadastrar Centros de Custo, que são unidades de custos a serem controladas pela contabilidade.
+	</texto>
+  </modulo>
+
+</ajuda>
+
+</documento>
