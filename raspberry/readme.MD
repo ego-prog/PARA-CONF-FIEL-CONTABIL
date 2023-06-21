@@ -2,14 +2,16 @@
 ```
 sudo add-apt-repository ppa:ondrej/php
 sudo apt-get update
-sudo apt-get install php5.6 php5.6-mysql php5.6-gd php5.6-mcrypt php5.6-mbstring php5.6-sqlite3 apache2 libapache2-mod-php5.6 -y
+sudo apt-get install -y php5.6 php5.6-mysql php5.6-gd php5.6-mcrypt php5.6-mbstring php5.6-sqlite3 apache2 libapache2-mod-php5.6
 ```
 
-## Instalar PostgreSQL
-`sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'`  
-`wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -`  
-`sudo apt-get update`  
-`sudo apt-get -y install postgresql-10 -y`
+## Instalar PostgreSQL  
+```
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list' 
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+`sudo apt-get update
+sudo apt-get -y install postgresql-10
+```
 
 ## Comandos PostgreSQL
 ### Status do PostgreSQL
