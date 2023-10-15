@@ -4,16 +4,7 @@ sudo add-apt-repository ppa:ondrej/php
 sudo apt-get update
 sudo apt-get install -y php5.6 php5.6-mysql php5.6-gd php5.6-mcrypt php5.6-mbstring php5.6-sqlite3 apache2 libapache2-mod-php5.6
 ```
-```
-sudo apt install apache2
-wget https://www.php.net/distributions/php-5.6.38.tar.bz2
-tar -xvjf php-5.6.38.tar.bz2
-cd php-5.6.38.tar.bz2
-./configure
-make
-sudo make install
-php -v
-```
+
 ## Instalar PostgreSQL  
 ```
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list' 
